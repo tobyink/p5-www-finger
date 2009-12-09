@@ -1,5 +1,8 @@
 package WWW::Finger;
 
+use strict;
+use 5.008001;
+
 use WWW::Finger::CPAN;
 use WWW::Finger::Fingerpoint;
 use WWW::Finger::Webfinger;
