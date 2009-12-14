@@ -3,15 +3,19 @@ package WWW::Finger;
 use strict;
 use 5.008001;
 
-use WWW::Finger::CPAN;
-use WWW::Finger::Fingerpoint;
-use WWW::Finger::Webfinger;
+use Carp;
+our @Modules;
+
+our $VERSION = '0.01';
 
 BEGIN
 {
-	my @Modules = ();
+	@Modules = ();
+	eval "use WWW::Finger::Fingerpoint;";
+	carp "Could not load Fingerpoint implementation ($@)" if $@;
+	!eval "use WWW::Finger::Webfinger;";
+	carp "Could not load Webfinger implementation ($@)" if $@;
 }
-
 
 sub new
 {
@@ -28,6 +32,18 @@ sub new
 	return undef;
 }
 
+sub import
+{
+	my $class = shift;
+	foreach my $implementation (@_)
+	{
+		my $module = $implementation;
+		$module =~ s/^\+/WWW::Finger::/;
+		eval "use $module;";
+		carp $@ if $@;
+	}
+}
+
 sub name     { return undef; }
 sub mbox     { return undef; }
 sub key      { return undef; }
@@ -39,9 +55,7 @@ sub webid    { return undef; }
 sub graph    { return undef; }
 
 1;
-
 __END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
@@ -54,9 +68,7 @@ WWW::Finger - Get useful data from e-mail addresses
 =head1 SYNOPSIS
 
   use WWW::Finger;
-  
   my $finger = WWW::Finger->new("joe@example.com");
-  
   if (defined $finger)
   {
     print $finger->name . "\n";
@@ -80,6 +92,9 @@ additional implementations:
 
 =back
 
+The cpan.org scraper implementation is disabled by default. See
+"IMPLEMENTATIONS" for more details.
+
 =head2 Constructor
 
 =over 8
@@ -95,11 +110,12 @@ if no implemetation is able to handle the identifier
 
 =head2 Object Methods
 
-Some or all of these methods may return undef. The C<name>, C<mbox>,
-C<homepage>, C<weblog>, C<image> and C<key> methods work in both scalar
-and list context. Depending on which implementation was used by
-C<WWW::Finger::new>, the object may also have additional methods. Consult
-the documentation for the various implementations for details.
+Any of these methods can return undef if the appropriate information
+is not available. The C<name>, C<mbox>, C<homepage>, C<weblog>,
+C<image> and C<key> methods work in both scalar and list context.
+Depending on which implementation was used by C<WWW::Finger::new>,
+the object may also have additional methods. Consult the
+documentation of the various implementations for details.
 
 =over 8
 
@@ -141,6 +157,89 @@ A SPARQL Protocol endpoint which may provide additional data about the person.
 An RDF::Trine::Model object holding data about the person. (See L<RDF::Trine>.)
 
 =back
+
+=head1 IMPLEMENTATIONS
+
+=head2 Loading Additional Implementations
+
+When importing this package ("use WWW::Finger") you can pass it
+a list of additional finger implementations to load. For example:
+
+  use WWW::Finger qw(WWW::Finger::CPAN MyCorp::Finger);
+
+For packages which start with "WWW::Finger::" there is a special
+abbreviation:
+
+  use WWW::Finger qw(+CPAN MyCorp::Finger);
+
+Assuming the finger implementations are written correctly,
+WWW::Finger->new should just notice they exist and use them
+when appropriate.
+
+The WebFinger and Fingerpoint implementations are loaded by
+default.
+
+To load additional implementations later on (after you've
+already "used" WWW::Finger) you can call the import method:
+
+  WWW::Finger->import(qw(+Foo +Bar MyCorp::Baz));
+
+There's no official method of removing an already-imported
+implementation, but if you really need to, try playing around
+with the C<@WWW::Finger::Modules> array.
+
+=head2 Calling an Implementation Specifically
+
+If you need to call a particular implementation specifically,
+that should be fairly simple:
+
+  use WWW::Finger::WebFinger;
+  my $finger = WWW::Finger::WebFinger->new("joe@example.com");
+  if (defined $finger)
+  {
+    print $finger->name . "\n";
+  }
+
+=head2 Writing Your Own Implementation
+
+Use this stub:
+
+  package WWW::Finger::Example;
+  
+  use strict;
+  use WWW::Finger;
+  use URI;
+  
+  our @ISA = qw(WWW::Finger);
+  our $VERSION = '0.01';
+  
+  BEGIN { push @WWW::Finger::Modules, __PACKAGE__; }
+  
+  sub new
+  {
+    my ($class, $identifier) = @_;
+    my $self = {};
+    
+    # Canonicalise the identifier. You don't have to use
+    # "mailto:"; other URI schemes are allowable.
+    $identifier = "mailto:$identifier"
+      unless $identifier =~ /^[a-z0-9\.\-\+]+:/i;
+
+    # Check whether this package can get useful info
+    # from $identifier. If not, then return undef.
+    if ('check things here')
+    {
+      return undef;
+    }
+    
+    $self->{'ident'} = URI->new($identifier);
+    bless $self, $class;
+  }
+  
+  # Override WWW::Finger methods like 'name', 'mbox', etc.
+  # Feel free to provide additional methods too.
+  
+  1;
 
 =head1 SEE ALSO
 

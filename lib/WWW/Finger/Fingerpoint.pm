@@ -209,7 +209,6 @@ sub key
 
 1;
 __END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
@@ -221,6 +220,23 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 
 =head1 SYNOPSIS
 
+  ## Using WWW::Finger
+  
+  use WWW::Finger;
+  
+  my $finger = WWW::Finger->new("joe@example.com");
+  
+  if ($finger)
+  {
+    if ($finger->isa('WWW::Finger::Fingerpoint'))
+    {
+      print "WWW::Finger used WWW::Fingerpoint\n";
+    }
+    print $finger->name . "\n";  # print person's name.
+ }
+
+  ## Using WWW::Finger::Fingerpoint directly
+  
   use RDF::Query::Client;
   use WWW::Finger::Fingerpoint;
   
@@ -238,23 +254,6 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
       print "Found page: " . $row->{'page'}->uri . "\n";
     }
   }
-
-=head1 DESCRIPTION
-
-Methods:
-
-  * new      - create new object from e-mail address
-  * name     - get person's name
-  * mbox     - get person's e-mail address
-  * homepage - get person's homepage URL
-  * weblog   - get person's blog URL
-  * image    - get person's photo or avatar URL
-  * key      - get a person's PGP/GPG key URL
-  * webid    - get person's identifying URI
-  * endpoint - get person's SPARQL endpoint for querying data
-  * graph    - get the results of a SPARQL DESCRIBE on the person
-
-I'll document this better one day!
 
 =head1 SEE ALSO
 

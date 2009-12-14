@@ -145,11 +145,14 @@ sub image
 
 1;
 __END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
-WWW::Finger::CPAN - WWW::Finger implementation for CPAN authors
+WWW::Finger::CPAN - WWW::Finger implementation which scrapes cpan.org.
+
+=head1 SEE ALSO
+
+L<WWW::Finger>.
 
 =head1 AUTHOR
 

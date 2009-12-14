@@ -21,9 +21,9 @@ requires            'LWP::Simple'        => 5.00;
 requires            'LWP::UserAgent'     => 5.00;
 requires            'RDF::Query'         => 2.200;
 requires            'RDF::Query::Client' => 0.02;
-requires            'RDF::Trine'         => 0.111;
+requires            'RDF::Trine'         => 0.112;
 requires            'XML::LibXML'        => 1.60;
-requires            'XRD::Parser'        => 0.02;
+requires            'XRD::Parser'        => 0.03;
 requires            'URI'                => 1.30;
 
 auto_install;

@@ -2,7 +2,7 @@ Changes
 Makefile.PL
 MANIFEST
 README
-t/WWW-Finger-Fingerpoint.t
+t/WWW-Finger.t
 lib/WWW/Finger/Fingerpoint.pm
 inc/Module/AutoInstall.pm
 inc/Module/Install/AutoInstall.pm
