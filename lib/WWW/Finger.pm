@@ -6,7 +6,7 @@ use 5.008001;
 use Carp;
 our @Modules;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 BEGIN
 {
@@ -63,7 +63,7 @@ WWW::Finger - Get useful data from e-mail addresses
 
 =head1 VERSION
 
-0.01
+0.03
 
 =head1 SYNOPSIS
 

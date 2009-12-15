@@ -13,7 +13,7 @@ use WWW::Finger;
 use URI;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 
@@ -216,7 +216,7 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 
 =head1 VERSION
 
-0.01
+0.03
 
 =head1 SYNOPSIS
 

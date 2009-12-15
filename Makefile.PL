@@ -10,6 +10,7 @@ author              'Toby Inkster <tobyink@cpan.org>';
 perl_version_from   'lib/WWW/Finger.pm';
 version_from        'lib/WWW/Finger.pm';
 abstract_from       'lib/WWW/Finger.pm';
+readme_from         'lib/WWW/Finger.pm';
 
 test_requires       'Test::More' => '0.61';
 
@@ -26,12 +27,12 @@ requires            'XML::LibXML'        => 1.60;
 requires            'XRD::Parser'        => 0.03;
 requires            'URI'                => 1.30;
 
+auto_set_homepage;
+auto_set_bugtracker;
+
+include 'Test::Signature';
 auto_install;
-
-sign;
-
-WriteAll;
-
-use Pod::Text;
-my $parser = Pod::Text->new (sentence => 0, width => 78);
-$parser->parse_from_file('lib/WWW/Finger.pm' => 'README');
+WriteAll(
+	'meta' => 1,
+	'sign' => 1,
+	);

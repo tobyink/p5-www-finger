@@ -13,7 +13,7 @@ use URI::Escape;
 use XRD::Parser 0.03;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 BEGIN
 {
@@ -198,11 +198,22 @@ sub graph
 	return $self->{'graph'};
 }
 
+sub endpoint
+{
+	my $self = shift;
+	my $ep   = $self->_simple_sparql('http://ontologi.es/sparql#endpoint');
+	return $ep;
+}
+
 1;
 __END__
 =head1 NAME
 
 WWW::Finger::Webfinger - WWW::Finger module for Webfinger
+
+=head1 VERSION
+
+0.03
 
 =head1 DESCRIPTION
 

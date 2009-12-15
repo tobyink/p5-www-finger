@@ -4,3 +4,9 @@ Revision history for Perl extension WWW::Finger::Fingerpoint.
 	- original version; created by h2xs 1.23 with options
 		--skip-warnings --skip-exporter --skip-autoloader -X -b 5.8.1 WWW::Finger::Fingerpoint
 
+0.02
+	- Fix build.
+
+0.03
+	- Fix package signature.
+	- WWW::Finger::Webfinger now provides an ->endpoint method.

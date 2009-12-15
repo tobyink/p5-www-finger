@@ -2,7 +2,7 @@ NAME
     WWW::Finger - Get useful data from e-mail addresses
 
 VERSION
-    0.01
+    0.03
 
 SYNOPSIS
       use WWW::Finger;
@@ -13,11 +13,12 @@ SYNOPSIS
       }
 
 DESCRIPTION
-    This module is *not* an implementation of the finger protocol (RFC 1288).
-    Use Net::Finger for that. Instead it is a set of implementations of
-    *other* methods for getting information from an e-mail address, or
-    e-mail-like identifier. This package includes three such implementations,
-    and it's pretty easy to create your own additional implementations:
+    This module is *not* an implementation of the finger protocol (RFC
+    1288). Use Net::Finger for that. Instead it is a set of implementations
+    of *other* methods for getting information from an e-mail address, or
+    e-mail-like identifier. This package includes three such
+    implementations, and it's pretty easy to create your own additional
+    implementations:
 
     *       WebFinger
 
@@ -34,12 +35,13 @@ DESCRIPTION
               $finger = WWW::Finger->new($identifier);
 
             Creates a WWW::Finger object for a particular identifier. Will
-            return undef if no implemetation is able to handle the identifier
+            return undef if no implemetation is able to handle the
+            identifier
 
   Object Methods
     Any of these methods can return undef if the appropriate information is
-    not available. The "name", "mbox", "homepage", "weblog", "image" and "key"
-    methods work in both scalar and list context. Depending on which
+    not available. The "name", "mbox", "homepage", "weblog", "image" and
+    "key" methods work in both scalar and list context. Depending on which
     implementation was used by "WWW::Finger::new", the object may also have
     additional methods. Consult the documentation of the various
     implementations for details.
@@ -62,16 +64,16 @@ DESCRIPTION
             <http://esw.w3.org/topic/WebID>.
 
     "endpoint"
-            A SPARQL Protocol endpoint which may provide additional data about
-            the person. (See RDF::Query::Client.)
+            A SPARQL Protocol endpoint which may provide additional data
+            about the person. (See RDF::Query::Client.)
 
     "graph" An RDF::Trine::Model object holding data about the person. (See
             RDF::Trine.)
 
 IMPLEMENTATIONS
   Loading Additional Implementations
-    When importing this package ("use WWW::Finger") you can pass it a list of
-    additional finger implementations to load. For example:
+    When importing this package ("use WWW::Finger") you can pass it a list
+    of additional finger implementations to load. For example:
 
       use WWW::Finger qw(WWW::Finger::CPAN MyCorp::Finger);
 
@@ -91,13 +93,13 @@ IMPLEMENTATIONS
 
       WWW::Finger->import(qw(+Foo +Bar MyCorp::Baz));
 
-    There's no official method of removing an already-imported implementation,
-    but if you really need to, try playing around with the
+    There's no official method of removing an already-imported
+    implementation, but if you really need to, try playing around with the
     @WWW::Finger::Modules array.
 
   Calling an Implementation Specifically
-    If you need to call a particular implementation specifically, that should
-    be fairly simple:
+    If you need to call a particular implementation specifically, that
+    should be fairly simple:
 
       use WWW::Finger::WebFinger;
       my $finger = WWW::Finger::WebFinger->new("joe@example.com");
@@ -162,6 +164,6 @@ COPYRIGHT AND LICENSE
     Copyright (C) 2009 by Toby Inkster
 
     This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself, either Perl version 5.8.1 or, at your
-    option, any later version of Perl 5 you may have available.
+    under the same terms as Perl itself, either Perl version 5.8.1 or, at
+    your option, any later version of Perl 5 you may have available.
 
