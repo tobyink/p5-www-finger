@@ -10,3 +10,13 @@ Revision history for Perl extension WWW::Finger::Fingerpoint.
 0.03
 	- Fix package signature.
 	- WWW::Finger::Webfinger now provides an ->endpoint method.
+
+0.04
+	- Bundle a command-line query tool
+	- Change default scheme for Webfinger from "acct://" to "acct:".
+	- Fingerpoint bugfix in ->graph()
+	- Unimplemented methods return empty arrays properly.
+
+0.05
+	- Mini bugfixes.
+	- use XRD::Parser 0.04;

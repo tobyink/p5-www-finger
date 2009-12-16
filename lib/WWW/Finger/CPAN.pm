@@ -8,7 +8,7 @@ use LWP::Simple;
 use WWW::Finger;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 BEGIN
 {
@@ -152,7 +152,7 @@ WWW::Finger::CPAN - WWW::Finger implementation which scrapes cpan.org.
 
 =head1 VERSION
 
-0.03
+0.05
 
 =head1 SEE ALSO
 

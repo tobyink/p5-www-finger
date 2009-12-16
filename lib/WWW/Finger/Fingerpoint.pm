@@ -13,7 +13,7 @@ use WWW::Finger;
 use URI;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 
@@ -90,15 +90,17 @@ sub new
 	my $result = $query->execute($self->endpoint, {QueryMethod=>'POST'});
 	my $webid;
 
-	while (my $binding = $result->next)
+	BINDING: while (my $binding = $result->next)
 	{
 		$webid = $binding->{'person'}->uri
 			if  $binding->{'person'}
 			and $binding->{'person'}->is_resource
 			and !defined $webid;
 			
-		foreach my $field (@fields)
+		FIELD: foreach my $field (@fields)
 		{
+			next FIELD unless $binding->{$field};
+			
 			if ($binding->{$field}->is_resource)
 				{ $self->{'data'}->{$field}->{ $binding->{$field}->uri } = 1; }
 			elsif ($binding->{$field}->is_literal)
@@ -126,6 +128,7 @@ sub graph
 		my $sha1 = sha1_hex($ident);
 		my $model = RDF::Trine::Model->new( RDF::Trine::Store->temporary_store );
 		my $query  = RDF::Query::Client->new("
+			PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 			DESCRIBE ?person
 			WHERE
 			{
@@ -134,9 +137,14 @@ sub graph
 				{ ?person foaf:mbox_sha1sum \"$sha1\" . }
 			}");
 		my $result = $query->execute($self->endpoint, {QueryMethod=>'POST'});
-		$model->add_statements( $result->as_stream );
-		
-		$self->{'graph'} = $model;
+		if ($result)
+		{
+			while (my $st = $result->next)
+			{
+				$model->add_statement($st);
+			}
+			$self->{'graph'} = $model;
+		}		
 	}
 	
 	return $self->{'graph'};
@@ -216,7 +224,7 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 
 =head1 VERSION
 
-0.03
+0.05
 
 =head1 SYNOPSIS
 

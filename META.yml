@@ -19,21 +19,24 @@ no_index:
     - inc
     - t
 requires:
-  Carp: 1
-  Digest::MD5: 2
-  Digest::SHA1: 2
+  Carp: 1.00
+  DateTime: 0
+  Digest::MD5: 2.00
+  Digest::SHA1: 2.00
+  Getopt::Long: 0
   HTTP::Link::Parser: 0.03
-  LWP::Simple: 5
-  LWP::UserAgent: 5
-  RDF::Query: 2.2
+  LWP::Simple: 5.00
+  LWP::UserAgent: 5.00
+  Pod::Usage: 0
+  RDF::Query: 2.200
   RDF::Query::Client: 0.02
   RDF::Trine: 0.112
-  URI: 1.3
-  XML::LibXML: 1.6
-  XRD::Parser: 0.03
+  URI: 1.30
+  XML::LibXML: 1.60
+  XRD::Parser: 0.04
   perl: 5.8.1
 resources:
   bugtracker: http://search.cpan.org/dist/WWW-Finger/
   homepage: http://search.cpan.org/dist/WWW-Finger/
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.05

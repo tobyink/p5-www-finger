@@ -14,18 +14,23 @@ readme_from         'lib/WWW/Finger.pm';
 
 test_requires       'Test::More' => '0.61';
 
-requires            'Carp'               => 1.00;
-requires            'Digest::MD5'        => 2.00;
-requires            'Digest::SHA1'       => 2.00;
-requires            'HTTP::Link::Parser' => 0.03;
-requires            'LWP::Simple'        => 5.00;
-requires            'LWP::UserAgent'     => 5.00;
-requires            'RDF::Query'         => 2.200;
-requires            'RDF::Query::Client' => 0.02;
-requires            'RDF::Trine'         => 0.112;
-requires            'XML::LibXML'        => 1.60;
-requires            'XRD::Parser'        => 0.03;
-requires            'URI'                => 1.30;
+requires            'Carp'               => '1.00';
+requires            'DateTime'           => 0;
+requires            'Digest::MD5'        => '2.00';
+requires            'Digest::SHA1'       => '2.00';
+requires            'Getopt::Long'       => 0;
+requires            'HTTP::Link::Parser' => '0.03';
+requires            'LWP::Simple'        => '5.00';
+requires            'LWP::UserAgent'     => '5.00';
+requires            'Pod::Usage'         => 0;
+requires            'RDF::Query'         => '2.200';
+requires            'RDF::Query::Client' => '0.02';
+requires            'RDF::Trine'         => '0.112';
+requires            'XML::LibXML'        => '1.60';
+requires            'XRD::Parser'        => '0.04';
+requires            'URI'                => '1.30';
+
+install_script 'fingerw';
 
 auto_set_homepage;
 auto_set_bugtracker;

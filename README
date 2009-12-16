@@ -2,7 +2,7 @@ NAME
     WWW::Finger - Get useful data from e-mail addresses
 
 VERSION
-    0.03
+    0.05
 
 SYNOPSIS
       use WWW::Finger;
@@ -156,6 +156,8 @@ SEE ALSO
     <http://buzzword.org.uk/2009/fingerpoint/spec>.
 
     <http://www.perlrdf.org/>.
+
+    fingerw.
 
 AUTHOR
     Toby Inkster, <tobyink@cpan.org>

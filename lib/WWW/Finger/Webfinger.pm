@@ -10,10 +10,10 @@ use RDF::Trine 0.112;
 use WWW::Finger;
 use URI;
 use URI::Escape;
-use XRD::Parser 0.03;
+use XRD::Parser 0.04;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 BEGIN
 {
@@ -26,7 +26,7 @@ sub new
 	my $ident = shift or croak "Need to supply an account address\n";
 	my $self  = bless {}, $class;
 
-	$ident = "acct://$ident"
+	$ident = "acct:$ident"
 		unless $ident =~ /^[a-z0-9\.\-\+]+:/i;
 	$ident = URI->new($ident);
 	return undef
@@ -34,6 +34,11 @@ sub new
 
 	$self->{'ident'} = $ident;
 	my ($user, $host) = split /\@/, $ident->authority;
+	if ("$ident" =~ /^(acct|mailto)\:([^\s\@]+)\@([a-z0-9\-\.]+)$/i)
+	{
+		$user = $2;
+		$host = $3;
+	}
 	
 	eval {
 		my $xrd_parser = XRD::Parser->hostmeta($host);
@@ -213,7 +218,7 @@ WWW::Finger::Webfinger - WWW::Finger module for Webfinger
 
 =head1 VERSION
 
-0.03
+0.05
 
 =head1 DESCRIPTION
 
@@ -221,7 +226,7 @@ Webfinger is currently a very unstable specification, with implementation detail
 changing all the time. Given this instability, it seems prudent to describe the
 protocol, as implemented by this package.
 
-Given an e-mail-like identifier, the package will prepend "acct://" to it, assuming that
+Given an e-mail-like identifier, the package will prepend "acct:" to it, assuming that
 the identifier doesn't already have a URI scheme. This identifier will now be called
 [ident].
 
@@ -263,6 +268,8 @@ description:
 =item * http://xmlns.com/foaf/0.1/img
 
 =item * http://xmlns.com/foaf/0.1/depiction
+
+=item * http://ontologi.es/sparql#endpoint
 
 =back
 

@@ -6,7 +6,7 @@ use 5.008001;
 use Carp;
 our @Modules;
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 BEGIN
 {
@@ -44,12 +44,12 @@ sub import
 	}
 }
 
-sub name     { return undef; }
-sub mbox     { return undef; }
-sub key      { return undef; }
-sub image    { return undef; }
-sub homepage { return undef; }
-sub weblog   { return undef; }
+sub name     { return qw() if wantarray; return undef; }
+sub mbox     { return qw() if wantarray; return undef; }
+sub key      { return qw() if wantarray; return undef; }
+sub image    { return qw() if wantarray; return undef; }
+sub homepage { return qw() if wantarray; return undef; }
+sub weblog   { return qw() if wantarray; return undef; }
 sub endpoint { return undef; }
 sub webid    { return undef; }
 sub graph    { return undef; }
@@ -63,7 +63,7 @@ WWW::Finger - Get useful data from e-mail addresses
 
 =head1 VERSION
 
-0.03
+0.05
 
 =head1 SYNOPSIS
 
@@ -250,6 +250,8 @@ L<http://code.google.com/p/webfinger/>.
 L<http://buzzword.org.uk/2009/fingerpoint/spec>.
 
 L<http://www.perlrdf.org/>.
+
+L<fingerw>.
 
 =head1 AUTHOR
 
