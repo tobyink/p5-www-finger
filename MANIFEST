@@ -11,6 +11,7 @@ lib/WWW/Finger.pm
 lib/WWW/Finger/Fingerpoint.pm
 lib/WWW/Finger/Webfinger.pm
 lib/WWW/Finger/CPAN.pm
+lib/WWW/Finger/BitworkingFingerProtocol.pm
 
 t/00sig.t
 t/WWW-Finger.t
