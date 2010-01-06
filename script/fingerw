@@ -1,20 +1,28 @@
 #!/usr/bin/perl
 
+use Data::Dumper;
 use DateTime;
-use Getopt::Long;
+use Getopt::Long qw(:config no_ignore_case bundling no_getopt_compat permute);;
 use Pod::Usage;
 use RDF::Trine::Serializer::RDFXML;
 use RDF::Trine::Serializer::NTriples;
 use RDF::Trine::Serializer::RDFJSON;
-use WWW::Finger qw(+CPAN);
 
 my $format  = 'text';
 my $verbose = 0;
+my @Extras;
+
 GetOptions(
 	'format|f=s'    => \$format,
+	'module|M=s@'   => \@Extras,
 	'verbose|v+'    => \$verbose,
 	'help|h|?'      => \$help,
 	);
+
+if ($verbose > 1)
+{
+	warn "Verbosity is $verbose.\n";
+}
 
 pod2usage(1) if $help;
 
@@ -24,9 +32,18 @@ my $address = shift @ARGV
 pod2usage("Supported formats: text, vcard, xml, nt, json.\n")
 	unless $format =~ /^(text|vcard|xml|nt|json)$/i;
 
+if ($verbose > 1)
+{
+	local $Data::Dumper::Terse  = 1;
+	local $Data::Dumper::Useqq  = 1;
+	local $Data::Dumper::Indent = 0;
+	warn sprintf("Loading extras: %s.\n", Dumper(\@Extras));
+}
+
+eval "use WWW::Finger \@Extras;";
 my $finger = WWW::Finger->new($address);
 
-die "Could not find any info for address $address\n"
+die "Could not find any info for address $address.\n"
 	unless defined $finger;
 
 if ($verbose)
@@ -36,7 +53,7 @@ if ($verbose)
 
 if ($format =~ /xml/i)
 {
-	die "Could not generate RDF graph\n"
+	die "Could not generate RDF graph.\n"
 		unless $finger->graph;
 	my $s = RDF::Trine::Serializer::RDFXML->new;
 	print $s->serialize_model_to_string($finger->graph);
@@ -44,7 +61,7 @@ if ($format =~ /xml/i)
 
 elsif ($format =~ /nt/i)
 {
-	die "Could not generate RDF graph\n"
+	die "Could not generate RDF graph.\n"
 		unless $finger->graph;
 	my $s = RDF::Trine::Serializer::NTriples->new;
 	print $s->serialize_model_to_string($finger->graph);
@@ -52,7 +69,7 @@ elsif ($format =~ /nt/i)
 
 elsif ($format =~ /json/i)
 {
-	die "Could not generate RDF graph\n"
+	die "Could not generate RDF graph.\n"
 		unless $finger->graph;
 	my $s = RDF::Trine::Serializer::RDFJSON->new;
 	print $s->serialize_model_to_string($finger->graph,{pretty=>1})."\n";
@@ -62,12 +79,23 @@ elsif ($format =~ /vcard/i)
 {
 	print "BEGIN:VCARD\n";
 	print "VERSION:3.0\n";
-	if ($finger->isa('WWW::Finger::Fingerpoint'))
+	if ($finger->can('endpoint') && length $finger->endpoint)
 	{
 		printf("SOURCE;X-QUERY=SPARQL:%s\n", vcard_escape($finger->endpoint));
 	}
+	elsif ($finger->isa('WWW::Finger::BitworkingFingerProtocol'))
+	{
+		printf("SOURCE:%s\n", vcard_escape($finger->{'profile_uri'}));
+	}
 	printf("FN:%s\n", vcard_escape($finger->name))
 		if $finger->name;
+	if ($finger->can('nick'))
+	{
+		foreach my $nick ($finger->nick)
+		{
+			printf("NICKNAME:%s\n", vcard_escape($nick));
+		}
+	}
 	printf("UID:%s\n", vcard_escape($finger->webid))
 		if $finger->webid;
 	foreach my $email ($finger->mbox)
@@ -138,6 +166,7 @@ fingerw [options] identifier
     --help, -h         this help message
     --format=F, -f F   output format
     --verbose, -v      increase verbosity
+    --module=I, -M I   use extra module
 
 The identifier should be an e-mail-like URI.
 
@@ -157,6 +186,15 @@ readable plain text output - the default), 'vcard' (vCard 3.0),
 
 The amount and type of data returned may vary depending on which
 format is chosen.
+
+=item B<--module>
+
+Extra module to attempt in addition to WWW::Finger::Webfinger and
+WWW::Finger::Fingerpoint.
+
+Examples:
+
+  fingerw -M '+CPAN' -f vcard tobyink@cpan.org
 
 =item B<--verbose>
 

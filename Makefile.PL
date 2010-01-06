@@ -20,6 +20,7 @@ requires            'Digest::MD5'        => '2.00';
 requires            'Digest::SHA1'       => '2.00';
 requires            'Getopt::Long'       => 0;
 requires            'HTTP::Link::Parser' => '0.03';
+requires            'JSON'               => '2.00';
 requires            'LWP::Simple'        => '5.00';
 requires            'LWP::UserAgent'     => '5.00';
 requires            'Pod::Usage'         => 0;
@@ -32,8 +33,14 @@ requires            'URI'                => '1.30';
 
 install_script 'fingerw';
 
-auto_set_homepage;
-auto_set_bugtracker;
+resources(
+	'homepage'   => 'http://search.cpan.org/dist/WWW-Finger/',
+	'repository' => 'http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/',
+	'bugtracker' => 'https://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger',
+	);
+	
+system("rapper -i turtle -o rdfxml-abbrev Changes >Changes.xml")
+	if $Module::Install::AUTHOR;
 
 include 'Test::Signature';
 auto_install;

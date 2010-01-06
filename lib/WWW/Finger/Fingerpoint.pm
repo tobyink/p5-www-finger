@@ -13,7 +13,7 @@ use WWW::Finger;
 use URI;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 
@@ -76,8 +76,13 @@ sub new
 			{ ?person foaf:mbox <$ident> . }
 			UNION
 			{ ?person foaf:mbox_sha1sum \"$sha1\" . }
+			UNION
+			{ ?person foaf:account <$ident> . }
+			UNION
+			{ ?person foaf:holdsAccount <$ident> . }
 		}
 		OPTIONAL { ?person foaf:name ?name . }
+		OPTIONAL { ?person foaf:nick ?nick . }
 		OPTIONAL { ?person foaf:homepage ?homepage . }
 		OPTIONAL { ?person foaf:mbox ?mbox . }
 		OPTIONAL { ?person foaf:weblog ?weblog . }
@@ -135,6 +140,10 @@ sub graph
 				{ ?person foaf:mbox <$ident> . }
 				UNION
 				{ ?person foaf:mbox_sha1sum \"$sha1\" . }
+				UNION
+				{ ?person foaf:account <$ident> . }
+				UNION
+				{ ?person foaf:holdsAccount <$ident> . }
 			}");
 		my $result = $query->execute($self->endpoint, {QueryMethod=>'POST'});
 		if ($result)
@@ -185,6 +194,12 @@ sub name
 	return $self->_data('name');
 }
 
+sub nick
+{
+	my $self = shift;
+	return $self->_data('nick');
+}
+
 sub mbox
 {
 	my $self = shift;
@@ -224,7 +239,7 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 SYNOPSIS
 

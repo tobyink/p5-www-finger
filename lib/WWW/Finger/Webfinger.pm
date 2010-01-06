@@ -12,8 +12,8 @@ use URI;
 use URI::Escape;
 use XRD::Parser 0.04;
 
-our @ISA = qw(WWW::Finger);
-our $VERSION = '0.05';
+our @ISA = qw(WWW::Finger::_GenericRDF);
+our $VERSION = '0.06';
 
 BEGIN
 {
@@ -109,6 +109,8 @@ sub new
 	return undef
 		unless defined $self->{'graph'} && $self->{'graph'}->count_statements;
 	
+	$self->follow_seeAlso(0);
+	
 	return $self;
 }
 
@@ -119,11 +121,14 @@ sub _simple_sparql
 	foreach my $p (@_)
 	{
 		$where .= " UNION " if length $where;
-		$where .= sprintf('{ <%s> <%s> ?x . } UNION { ?z xrd:alias <%s> ; <%s> ?x . }',
-			(''.$self->{'ident'}),
-			$p,
-			(''.$self->{'ident'}),
-			$p
+		$where .= sprintf('{ <%s> <%s> ?x . } '
+				. 'UNION { ?z xrd:alias <%s> ; <%s> ?x . } '
+				. 'UNION { ?z <http://xmlns.com/foaf/0.1/account> <%s> ; <%s> ?x . } '
+				. 'UNION { ?z <http://xmlns.com/foaf/0.1/holdsAccount> <%s> ; <%s> ?x . }',
+			(''.$self->{'ident'}), $p,
+			(''.$self->{'ident'}), $p,
+			(''.$self->{'ident'}), $p,
+			(''.$self->{'ident'}), $p,
 			);
 	}
 	
@@ -153,61 +158,10 @@ sub _simple_sparql
 	return undef;
 }
 
-sub name
-{
-	my $self = shift;
-	return $self->_simple_sparql(
-		'http://xmlns.com/foaf/0.1/name');
-}
-
-sub homepage
-{
-	my $self = shift;
-	return $self->_simple_sparql(
-		'http://xmlns.com/foaf/0.1/homepage',
-		'http://webfinger.net/rel/profile-page');
-}
-
-sub weblog
-{
-	my $self = shift;
-	return $self->_simple_sparql(
-		'http://xmlns.com/foaf/0.1/weblog');
-}
-
-sub mbox
-{
-	my $self = shift;
-	return $self->_simple_sparql(
-		'http://xmlns.com/foaf/0.1/mbox');
-}
-
-sub image
-{
-	my $self = shift;
-	return $self->_simple_sparql(
-		'http://webfinger.net/rel/avatar',
-		'http://xmlns.com/foaf/0.1/img',
-		'http://xmlns.com/foaf/0.1/depiction');
-}
-
 sub webid
 {
 	my $self = shift;
-	return ''.$self->{'ident'};
-}
-
-sub graph
-{
-	my $self = shift;
-	return $self->{'graph'};
-}
-
-sub endpoint
-{
-	my $self = shift;
-	my $ep   = $self->_simple_sparql('http://ontologi.es/sparql#endpoint');
-	return $ep;
+	return $self->SUPER::webid(@_);
 }
 
 1;
@@ -218,7 +172,7 @@ WWW::Finger::Webfinger - WWW::Finger module for Webfinger
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 DESCRIPTION
 

@@ -25,6 +25,7 @@ requires:
   Digest::SHA1: 2.00
   Getopt::Long: 0
   HTTP::Link::Parser: 0.03
+  JSON: 2.00
   LWP::Simple: 5.00
   LWP::UserAgent: 5.00
   Pod::Usage: 0
@@ -36,7 +37,8 @@ requires:
   XRD::Parser: 0.04
   perl: 5.8.1
 resources:
-  bugtracker: http://search.cpan.org/dist/WWW-Finger/
+  bugtracker: https://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger
   homepage: http://search.cpan.org/dist/WWW-Finger/
   license: http://dev.perl.org/licenses/
-version: 0.05
+  repository: http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/
+version: 0.06

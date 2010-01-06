@@ -8,7 +8,7 @@ use LWP::Simple;
 use WWW::Finger;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 BEGIN
 {
@@ -77,7 +77,8 @@ sub mbox
 		push @e, $1;
 	}
 	my ($user, $host) = split /\@/, $self->{'ident'}->to;
-	push @e, 'mailto:' . $user . '@cpan.org';
+	push @e, 'mailto:' . $user . '@cpan.org'
+		unless lc $e[0] eq 'mailto:' . $user . '@cpan.org';
 	
 	if (wantarray)
 	{
@@ -152,7 +153,17 @@ WWW::Finger::CPAN - WWW::Finger implementation which scrapes cpan.org.
 
 =head1 VERSION
 
-0.05
+0.06
+
+=head1 DESCRIPTION
+
+Additional methods (other than standard WWW::Finger):
+
+=over 8
+
+=item * C<cpanpage> - returns the person's search.cpan.org homepage.
+
+=back
 
 =head1 SEE ALSO
 

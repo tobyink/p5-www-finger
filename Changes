@@ -1,22 +1,106 @@
-Revision history for Perl extension WWW::Finger::Fingerpoint.
+@prefix :        <http://search.cpan.org/dist/WWW-Finger/#> .
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix doap:    <http://usefulinc.com/ns/doap#> .
+@prefix asc:     <http://aaronland.info/ns/changefile/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-0.01  Tue Dec  8 15:38:56 2009
-	- original version; created by h2xs 1.23 with options
-		--skip-warnings --skip-exporter --skip-autoloader -X -b 5.8.1 WWW::Finger::Fingerpoint
+<>
+	dc:description   "Revision history for Perl extension WWW::Finger."@en ;
+	dc:subject       :project ;
+	dc:creator       <http://tobyinkster.co.uk/#i>
+	.
 
-0.02
-	- Fix build.
+:project
+	a               doap:Project ;
+	doap:name       "WWW-Finger" ;
+	doap:shortdesc  "Get useful data from e-mail addresses"@en ;
+	doap:programming-language
+		"Perl" ;
+	doap:homepage   <http://search.cpan.org/dist/WWW-Finger/> ;
+	doap:download-page
+		<http://search.cpan.org/dist/WWW-Finger/> ,
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/> ;
+	doap:bug-database
+		<https://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger> ;
+	doap:maintainer <http://tobyinkster.co.uk/#i> ;
+	doap:developer  <http://tobyinkster.co.uk/#i> ;
+	doap:documenter <http://tobyinkster.co.uk/#i> ;
+	doap:tester     <http://tobyinkster.co.uk/#i> ;
+	doap:created    "2009-12-08"^^xsd:date ;
+	doap:license    <http://dev.perl.org/licenses/> ;
+	doap:release    :v_0.01 , :v_0.02 , :v_0.03 , :v_0.04 , :v_0.05 , :v_0.06
+	.
 
-0.03
-	- Fix package signature.
-	- WWW::Finger::Webfinger now provides an ->endpoint method.
+:v_0.01
+	a               doap:Version ;
+	dc:issued       "2009-12-14"^^xsd:date ;
+	doap:revision   "0.01"^^xsd:string ;
+	asc:changes
+	[
+		asc:comment  "Original version."@en
+	]
+	.
+	
+:v_0.02
+	a               doap:Version ;
+	dc:issued       "2009-12-14"^^xsd:date ;
+	doap:revision   "0.02"^^xsd:string ;
+	asc:changes
+	[
+		asc:bugfix   "Fixed problems with build."@en
+	]
+	.
+	
+:v_0.03
+	a               doap:Version ;
+	dc:issued       "2009-12-15"^^xsd:date ;
+	doap:revision   "0.03"^^xsd:string ;
+	asc:changes
+	[
+		asc:bugfix   "Fixed package signature."@en ;
+		asc:addition "WWW::Finger::Webfinger now provides an ->endpoint method."@en
+	]
+	.
+	
+:v_0.04
+	a               doap:Version ;
+	dc:issued       "2009-12-16"^^xsd:date ;
+	doap:revision   "0.04"^^xsd:string ;
+	asc:changes
+	[
+		asc:addition "Bundle a command-line query tool."@en ;
+		asc:change   "Change default scheme for Webfinger from 'acct://' to 'acct:'."@en ;
+		asc:bugfix   "Fingerpoint bugfix in ->graph()."@en ;
+		asc:bugfix   "Unimplemented methods return empty arrays properly."@en
+	]
+	.
+	
+:v_0.05
+	a               doap:Version ;
+	dc:issued       "2009-12-16"^^xsd:date ;
+	doap:revision   "0.05"^^xsd:string ;
+	asc:changes
+	[
+		asc:bugfix   "Mini bug-fixes."@en ;
+		asc:update   "use XRD::Parser 0.04."@en
+	]
+	.
+	
+:v_0.06
+	a               doap:Version ;
+	dc:issued       "2009-01-06"^^xsd:date ;
+	doap:revision   "0.06"^^xsd:string ;
+	asc:changes
+	[
+		asc:addition "Support Joe Gregorio's alternative to current Webfinger protocol."@en ;
+		asc:addition "Allow fingerw command-line client to load additional modules."@en ;
+		asc:update   "Improve fingerw's debugging (verbose) messages."@en ;
+		asc:change   "Refactor some code from WWW::Finger::Webfinger to allow it to be used elsewhere."@en ;
+		asc:addition "Follow rdf:seeAlso and ianalink:describedby links found in Webfinger account profiles."@en ;
+		asc:addition "Support semantics of foaf:account and foaf:holdsAccount."@en ;
+		asc:bugfix   "Fix duplicated mbox in WWW::Finger::CPAN."@en ;
+		asc:update   "Use Turtle for Changes file."@en
+	]
+	.
 
-0.04
-	- Bundle a command-line query tool
-	- Change default scheme for Webfinger from "acct://" to "acct:".
-	- Fingerpoint bugfix in ->graph()
-	- Unimplemented methods return empty arrays properly.
-
-0.05
-	- Mini bugfixes.
-	- use XRD::Parser 0.04;
+		
