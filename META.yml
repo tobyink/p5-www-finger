@@ -41,4 +41,4 @@ resources:
   homepage: http://search.cpan.org/dist/WWW-Finger/
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/
-version: 0.06
+version: 0.07

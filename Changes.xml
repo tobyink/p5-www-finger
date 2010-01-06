@@ -98,4 +98,14 @@
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
     <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.06</doap:revision>
   </doap:Version>
+  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.07">
+    <asc:changes>
+      <rdf:Description>
+        <asc:bugfix xml:lang="en">Include BitworkingFingerProtocol.pm in MANIFEST.</asc:bugfix>
+        <asc:update xml:lang="en">Update copyright noticed to 2010.</asc:update>
+      </rdf:Description>
+    </asc:changes>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
+    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.07</doap:revision>
+  </doap:Version>
 </rdf:RDF>

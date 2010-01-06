@@ -13,7 +13,7 @@ use URI::Escape;
 use XRD::Parser 0.04;
 
 our @ISA = qw(WWW::Finger::_GenericRDF);
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 BEGIN
 {
@@ -172,7 +172,7 @@ WWW::Finger::Webfinger - WWW::Finger module for Webfinger
 
 =head1 VERSION
 
-0.06
+0.07
 
 =head1 DESCRIPTION
 
@@ -239,7 +239,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Toby Inkster
+Copyright (C) 2009-2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.1 or,

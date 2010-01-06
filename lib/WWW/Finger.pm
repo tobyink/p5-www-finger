@@ -6,7 +6,7 @@ use 5.008001;
 use Carp;
 our @Modules;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 BEGIN
 {
@@ -288,7 +288,7 @@ WWW::Finger - Get useful data from e-mail addresses
 
 =head1 VERSION
 
-0.06
+0.07
 
 =head1 SYNOPSIS
 
@@ -484,7 +484,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2009 by Toby Inkster
+Copyright (C) 2009-2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.1 or,

@@ -28,7 +28,7 @@
 	doap:tester     <http://tobyinkster.co.uk/#i> ;
 	doap:created    "2009-12-08"^^xsd:date ;
 	doap:license    <http://dev.perl.org/licenses/> ;
-	doap:release    :v_0.01 , :v_0.02 , :v_0.03 , :v_0.04 , :v_0.05 , :v_0.06
+	doap:release    :v_0.01 , :v_0.02 , :v_0.03 , :v_0.04 , :v_0.05 , :v_0.06 , :v_0.07
 	.
 
 :v_0.01
@@ -109,6 +109,7 @@
 	doap:revision   "0.07"^^xsd:string ;
 	asc:changes
 	[
-		asc:bugfix   "Include BitworkingFingerProtocol.pm in MANIFEST."@en
+		asc:bugfix   "Include BitworkingFingerProtocol.pm in MANIFEST."@en ;
+		asc:update   "Update copyright noticed to 2010."@en
 	]
 	.

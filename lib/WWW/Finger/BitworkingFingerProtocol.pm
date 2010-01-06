@@ -11,7 +11,7 @@ use URI;
 use URI::Escape;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 BEGIN
 {
@@ -120,7 +120,7 @@ WWW::Finger::BitworkingFingerProtocol - WWW::Finger module for Webfinger
 
 =head1 VERSION
 
-0.06
+0.07
 
 =head1 DESCRIPTION
 
