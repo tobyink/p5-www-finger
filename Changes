@@ -1,16 +1,156 @@
+#############################################################
+
 @prefix :        <http://search.cpan.org/dist/WWW-Finger/#> .
+@prefix dcs:     <http://ontologi.es/doap-changeset#> .
 @prefix dc:      <http://purl.org/dc/terms/> .
 @prefix doap:    <http://usefulinc.com/ns/doap#> .
-@prefix asc:     <http://aaronland.info/ns/changefile/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
+#############################################################
+
 <>
+
+	dc:title         "Changes" ;
 	dc:description   "Revision history for Perl extension WWW::Finger."@en ;
 	dc:subject       :project ;
-	dc:creator       <http://tobyinkster.co.uk/#i>
-	.
+	dc:creator       <http://tobyinkster.co.uk/#i> .
+
+#############################################################
+
+:v_0.01
+
+	a               doap:Version ;
+	dc:issued       "2009-12-14"^^xsd:date ;
+	doap:revision   "0.01"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.01.tar.gz> ;
+	rdfs:comment    "Original version"@en .
+	
+:v_0.02
+
+	a               doap:Version ;
+	dc:issued       "2009-12-14"^^xsd:date ;
+	doap:revision   "0.02"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.02.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.01 ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Fixed problems with build."@en ]
+	] .
+	
+:v_0.03
+
+	a               doap:Version ;
+	dc:issued       "2009-12-15"^^xsd:date ;
+	doap:revision   "0.03"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.03.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.02 ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Fixed package signature."@en ] ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "WWW::Finger::Webfinger now provides an ->endpoint method."@en ]
+	] .
+	
+:v_0.04
+
+	a               doap:Version ;
+	dc:issued       "2009-12-16"^^xsd:date ;
+	doap:revision   "0.04"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.04.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.03 ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "Bundle a command-line query tool."@en ] ;
+		dcs:item [ a dcs:Change ;    rdfs:label "Change default scheme for Webfinger from 'acct://' to 'acct:'."@en ] ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Fingerpoint bugfix in ->graph()."@en ] ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Unimplemented methods return empty arrays properly."@en ]
+	] .
+	
+:v_0.05
+
+	a               doap:Version ;
+	dc:issued       "2009-12-16"^^xsd:date ;
+	doap:revision   "0.05"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.05.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.04 ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Mini bug-fixes."@en ] ;
+		dcs:item [ a dcs:Update ;    rdfs:label "use XRD::Parser 0.04."@en ]
+	] .
+	
+:v_0.06
+
+	a               doap:Version ;
+	dc:issued       "2009-01-06"^^xsd:date ;
+	doap:revision   "0.06"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.06.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.05 ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "Support Joe Gregorio's alternative to current Webfinger protocol."@en ] ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "Allow fingerw command-line client to load additional modules."@en ] ;
+		dcs:item [ a dcs:Update ;    rdfs:label "Improve fingerw's debugging (verbose) messages."@en ] ;
+		dcs:item [ a dcs:Change ;    rdfs:label "Refactor some code from WWW::Finger::Webfinger to allow it to be used elsewhere."@en ] ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "Follow rdf:seeAlso and ianalink:describedby links found in Webfinger account profiles."@en ] ;
+		dcs:item [ a dcs:Addition ;  rdfs:label "Support semantics of foaf:account and foaf:holdsAccount."@en ] ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Fix duplicated mbox in WWW::Finger::CPAN."@en ] ;
+		dcs:item [ a dcs:Update ;    rdfs:label "Use Turtle for Changes file."@en ]
+	] .
+		
+:v_0.07
+
+	a               doap:Version ;
+	dc:issued       "2009-01-06"^^xsd:date ;
+	doap:revision   "0.07"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.07.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.06 ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Include BitworkingFingerProtocol.pm in MANIFEST."@en ] ;
+		dcs:item [ a dcs:Update ;    rdfs:label "Update copyright noticed to 2010."@en ]
+	] .
+
+:v_0.08
+
+	a               doap:Version ;
+	dc:issued       "2010-01-06"^^xsd:date ;
+	doap:revision   "0.08"^^xsd:string ;
+	doap:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.08.tar.gz> ;
+	rdfs:comment    "Too many releases today!"@en ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0.07 ;
+		dcs:item [ a dcs:Bugfix ;    rdfs:label "Documentation improvements."@en ] ;
+	] .
+
+
+[
+	a dcs:ChangeSet ;
+	dcs:versus :v_0.08 ;
+	dcs:item [ a dcs:Update ;    rdfs:label "Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab."@en ; dcs:checkin "r104"^^xsd:string ]
+] .
+
+#############################################################
 
 :project
+
 	a               doap:Project ;
 	doap:name       "WWW-Finger" ;
 	doap:shortdesc  "Get useful data from e-mail addresses"@en ;
@@ -18,98 +158,34 @@
 		"Perl" ;
 	doap:homepage   <http://search.cpan.org/dist/WWW-Finger/> ;
 	doap:download-page
-		<http://search.cpan.org/dist/WWW-Finger/> ,
-		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/> ;
+		<http://search.cpan.org/dist/WWW-Finger/> ;
 	doap:bug-database
-		<https://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger> ;
+		<http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger> ;
+	doap:repository
+	[
+		a            doap:SVNRepository ;
+		doap:browse  <http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/>
+	] ;
 	doap:maintainer <http://tobyinkster.co.uk/#i> ;
 	doap:developer  <http://tobyinkster.co.uk/#i> ;
 	doap:documenter <http://tobyinkster.co.uk/#i> ;
 	doap:tester     <http://tobyinkster.co.uk/#i> ;
 	doap:created    "2009-12-08"^^xsd:date ;
-	doap:license    <http://dev.perl.org/licenses/> ;
-	doap:release    :v_0.01 , :v_0.02 , :v_0.03 , :v_0.04 , :v_0.05 , :v_0.06 , :v_0.07
-	.
+	doap:license
+		<http://dev.perl.org/licenses/> ,
+		<http://dev.perl.org/licenses/artistic.html> ,
+		<http://www.opensource.org/licenses/gpl-license.php> ;
+	doap:release
+		:v_0.01 , :v_0.02 , :v_0.03 , :v_0.04 , :v_0.05 ,
+		:v_0.06 , :v_0.07 , :v_0.08 .
 
-:v_0.01
-	a               doap:Version ;
-	dc:issued       "2009-12-14"^^xsd:date ;
-	doap:revision   "0.01"^^xsd:string ;
-	asc:changes
-	[
-		asc:comment  "Original version."@en
-	]
-	.
-	
-:v_0.02
-	a               doap:Version ;
-	dc:issued       "2009-12-14"^^xsd:date ;
-	doap:revision   "0.02"^^xsd:string ;
-	asc:changes
-	[
-		asc:bugfix   "Fixed problems with build."@en
-	]
-	.
-	
-:v_0.03
-	a               doap:Version ;
-	dc:issued       "2009-12-15"^^xsd:date ;
-	doap:revision   "0.03"^^xsd:string ;
-	asc:changes
-	[
-		asc:bugfix   "Fixed package signature."@en ;
-		asc:addition "WWW::Finger::Webfinger now provides an ->endpoint method."@en
-	]
-	.
-	
-:v_0.04
-	a               doap:Version ;
-	dc:issued       "2009-12-16"^^xsd:date ;
-	doap:revision   "0.04"^^xsd:string ;
-	asc:changes
-	[
-		asc:addition "Bundle a command-line query tool."@en ;
-		asc:change   "Change default scheme for Webfinger from 'acct://' to 'acct:'."@en ;
-		asc:bugfix   "Fingerpoint bugfix in ->graph()."@en ;
-		asc:bugfix   "Unimplemented methods return empty arrays properly."@en
-	]
-	.
-	
-:v_0.05
-	a               doap:Version ;
-	dc:issued       "2009-12-16"^^xsd:date ;
-	doap:revision   "0.05"^^xsd:string ;
-	asc:changes
-	[
-		asc:bugfix   "Mini bug-fixes."@en ;
-		asc:update   "use XRD::Parser 0.04."@en
-	]
-	.
-	
-:v_0.06
-	a               doap:Version ;
-	dc:issued       "2009-01-06"^^xsd:date ;
-	doap:revision   "0.06"^^xsd:string ;
-	asc:changes
-	[
-		asc:addition "Support Joe Gregorio's alternative to current Webfinger protocol."@en ;
-		asc:addition "Allow fingerw command-line client to load additional modules."@en ;
-		asc:update   "Improve fingerw's debugging (verbose) messages."@en ;
-		asc:change   "Refactor some code from WWW::Finger::Webfinger to allow it to be used elsewhere."@en ;
-		asc:addition "Follow rdf:seeAlso and ianalink:describedby links found in Webfinger account profiles."@en ;
-		asc:addition "Support semantics of foaf:account and foaf:holdsAccount."@en ;
-		asc:bugfix   "Fix duplicated mbox in WWW::Finger::CPAN."@en ;
-		asc:update   "Use Turtle for Changes file."@en
-	]
-	.
-		
-:v_0.07
-	a               doap:Version ;
-	dc:issued       "2009-01-06"^^xsd:date ;
-	doap:revision   "0.07"^^xsd:string ;
-	asc:changes
-	[
-		asc:bugfix   "Include BitworkingFingerProtocol.pm in MANIFEST."@en ;
-		asc:update   "Update copyright noticed to 2010."@en
-	]
-	.
+#############################################################
+
+<http://tobyinkster.co.uk/#i>
+
+	a               foaf:Person ;
+	foaf:name       "Toby Inkster" ;
+	foaf:homepage   <http://tobyinkster.co.uk/> ;
+	foaf:page       <http://search.cpan.org/~tobyink/> .
+
+#############################################################
