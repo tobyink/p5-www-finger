@@ -11,7 +11,7 @@ use URI;
 use URI::Escape;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 BEGIN
 {
@@ -116,11 +116,20 @@ sub dictionary
 __END__
 =head1 NAME
 
-WWW::Finger::BitworkingFingerProtocol - WWW::Finger module for Webfinger
+WWW::Finger::BitworkingFingerProtocol - WWW::Finger module for Joe Gregorio's finger protocol
 
 =head1 VERSION
 
-0.07
+0.08
+
+=head1 SYNOPSIS
+
+  use WWW::Finger qw(+BitworkingFingerProtocol);
+  my $finger = WWW::Finger->new("joe@example.com");
+  if (defined $finger)
+  {
+    print $finger->openid . "\n";
+  }
 
 =head1 DESCRIPTION
 

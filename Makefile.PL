@@ -36,7 +36,7 @@ install_script 'fingerw';
 resources(
 	'homepage'   => 'http://search.cpan.org/dist/WWW-Finger/',
 	'repository' => 'http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/',
-	'bugtracker' => 'https://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger',
+	'bugtracker' => 'http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger',
 	);
 	
 system("rapper -i turtle -o rdfxml-abbrev Changes >Changes.xml")

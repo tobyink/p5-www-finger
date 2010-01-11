@@ -2,7 +2,7 @@ NAME
     WWW::Finger - Get useful data from e-mail addresses
 
 VERSION
-    0.07
+    0.08
 
 SYNOPSIS
       use WWW::Finger;
@@ -16,9 +16,8 @@ DESCRIPTION
     This module is *not* an implementation of the finger protocol (RFC
     1288). Use Net::Finger for that. Instead it is a set of implementations
     of *other* methods for getting information from an e-mail address, or
-    e-mail-like identifier. This package includes three such
-    implementations, and it's pretty easy to create your own additional
-    implementations:
+    e-mail-like identifier. This package includes four such implementations,
+    and it's pretty easy to create your own additional implementations:
 
     *       WebFinger
 
@@ -26,8 +25,10 @@ DESCRIPTION
 
     *       cpan.org scraper (for user@cpan.org)
 
-    The cpan.org scraper implementation is disabled by default. See
-    "IMPLEMENTATIONS" for more details.
+    *       Unnamed finger protocol described on bitworking.org
+
+    Only the first two implementations are enabled by default. See
+    "IMPLEMENTATIONS" on how to enable others, and for more details.
 
   Constructor
     *       "new"

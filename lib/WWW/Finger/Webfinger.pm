@@ -13,7 +13,7 @@ use URI::Escape;
 use XRD::Parser 0.04;
 
 our @ISA = qw(WWW::Finger::_GenericRDF);
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 BEGIN
 {
@@ -172,7 +172,7 @@ WWW::Finger::Webfinger - WWW::Finger module for Webfinger
 
 =head1 VERSION
 
-0.07
+0.08
 
 =head1 DESCRIPTION
 

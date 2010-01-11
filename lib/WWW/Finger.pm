@@ -6,7 +6,7 @@ use 5.008001;
 use Carp;
 our @Modules;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 BEGIN
 {
@@ -58,6 +58,7 @@ sub graph    { return undef; }
 
 # Below is not a proper WWW::Finger implementation, but is rather a
 # framework which real implementations can hook onto by subclassing.
+
 package WWW::Finger::_GenericRDF;
 
 use LWP::UserAgent;
@@ -66,7 +67,7 @@ use RDF::Query;
 use Digest::SHA1 qw(sha1_hex);
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.06';
+our $VERSION = '0.08';
 
 sub _new_from_response
 {
@@ -288,7 +289,7 @@ WWW::Finger - Get useful data from e-mail addresses
 
 =head1 VERSION
 
-0.07
+0.08
 
 =head1 SYNOPSIS
 
@@ -304,7 +305,7 @@ WWW::Finger - Get useful data from e-mail addresses
 This module is I<not> an implementation of the finger protocol (RFC 1288). Use
 Net::Finger for that. Instead it is a set of implementations of I<other> methods
 for getting information from an e-mail address, or e-mail-like identifier. This package
-includes three such implementations, and it's pretty easy to create your own
+includes four such implementations, and it's pretty easy to create your own
 additional implementations:
 
 =over 8
@@ -315,10 +316,12 @@ additional implementations:
 
 =item * cpan.org scraper (for user@cpan.org)
 
+=item * Unnamed finger protocol described on bitworking.org
+
 =back
 
-The cpan.org scraper implementation is disabled by default. See
-"IMPLEMENTATIONS" for more details.
+Only the first two implementations are enabled by default. See
+"IMPLEMENTATIONS" on how to enable others, and for more details.
 
 =head2 Constructor
 
