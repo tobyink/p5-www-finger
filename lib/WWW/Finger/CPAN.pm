@@ -1,13 +1,13 @@
 package WWW::Finger::CPAN;
 
 use 5.008;
+use base qw(WWW::Finger);
 use strict;
 
 use Digest::MD5 qw(md5_hex);
 use LWP::Simple;
 use WWW::Finger;
 
-our @ISA = qw(WWW::Finger);
 our $VERSION = '0.09';
 
 BEGIN
@@ -33,7 +33,7 @@ sub new
 	my ($user, $host) = split /\@/, $self->{'ident'}->to;
 	return undef
 		unless lc $host eq 'cpan.org';
-	
+
 	return $self;
 }
 

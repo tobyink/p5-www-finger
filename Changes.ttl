@@ -152,7 +152,8 @@ my:v_0-09
 	[
 		a dcs:ChangeSet ;
 		dcs:versus :v_0-08 ;
-		dcs:item [ a dcs:Update ; dcs:checkin "r104"^^xsd:string ; rdfs:label "Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab."@en ]
+		dcs:item [ a dcs:Update ; dcs:checkin "r104"^^xsd:string ; rdfs:label "Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab."@en ] ;
+		dcs:item [ rdfs:label "Various cleanups."@en ]
 	] .
 
 

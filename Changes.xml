@@ -201,6 +201,11 @@
             <rdfs:label xml:lang="en">Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab.</rdfs:label>
           </dcs:Update>
         </dcs:item>
+        <dcs:item>
+          <rdf:Description>
+            <rdfs:label xml:lang="en">Various cleanups.</rdfs:label>
+          </rdf:Description>
+        </dcs:item>
         <dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-08"/>
       </dcs:ChangeSet>
     </dcs:changeset>

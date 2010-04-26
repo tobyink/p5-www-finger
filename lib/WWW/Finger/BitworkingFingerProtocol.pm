@@ -1,6 +1,7 @@
 package WWW::Finger::BitworkingFingerProtocol;
 
 use 5.008;
+use base qw(WWW::Finger);
 use strict;
 
 use Carp;
@@ -10,7 +11,6 @@ use WWW::Finger;
 use URI;
 use URI::Escape;
 
-our @ISA = qw(WWW::Finger);
 our $VERSION = '0.09';
 
 BEGIN

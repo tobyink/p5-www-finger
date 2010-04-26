@@ -1,6 +1,7 @@
 package WWW::Finger::Webfinger;
 
 use 5.008;
+use base qw(WWW::Finger::_GenericRDF);
 use strict;
 
 use Carp;
@@ -12,7 +13,6 @@ use URI;
 use URI::Escape;
 use XRD::Parser 0.04;
 
-our @ISA = qw(WWW::Finger::_GenericRDF);
 our $VERSION = '0.09';
 
 BEGIN
@@ -33,18 +33,20 @@ sub new
 		unless $ident->scheme =~ /^(mailto|acct|xmpp)$/;
 
 	$self->{'ident'} = $ident;
-	my ($user, $host) = split /\@/, $ident->authority;
+	my ($user, $host) = split /\@/, $ident->authority
+		if defined $ident && defined $ident->authority;
 	if ("$ident" =~ /^(acct|mailto)\:([^\s\@]+)\@([a-z0-9\-\.]+)$/i)
 	{
 		$user = $2;
 		$host = $3;
 	}
-	
+
 	eval {
 		my $xrd_parser = XRD::Parser->hostmeta($host);
 		$xrd_parser->consume;
 		$self->{'hostmeta'} = $xrd_parser->graph;
 	};
+
 	return undef unless defined $self->{'hostmeta'};
 	
 	my @descriptors;

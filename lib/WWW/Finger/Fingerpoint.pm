@@ -1,6 +1,7 @@
 package WWW::Finger::Fingerpoint;
 
 use 5.008;
+use base qw(WWW::Finger);
 use strict;
 
 use Carp;
@@ -12,7 +13,6 @@ use RDF::Trine;
 use WWW::Finger;
 use URI;
 
-our @ISA = qw(WWW::Finger);
 our $VERSION = '0.09';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
@@ -63,7 +63,7 @@ sub new
 	}
 
 	return undef
-		unless length $sparql;
+		unless defined $sparql && length $sparql;
 	
 	$self->{'endpoint'} = $sparql;
 	
