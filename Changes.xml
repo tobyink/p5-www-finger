@@ -2,25 +2,26 @@
 <rdf:RDF
    xmlns:dc="http://purl.org/dc/terms/"
    xmlns:dcs="http://ontologi.es/doap-changeset#"
-   xmlns:doap="http://usefulinc.com/ns/doap#"
    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:my="http://purl.org/NET/cpan-uri/dist/WWW-Finger/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:toby="http://tobyinkster.co.uk/#"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-   xmlns="http://search.cpan.org/dist/WWW-Finger/#">
-  <rdf:Description rdf:about="file:///home/tai/src/perlmods/WWW-Finger/Changes">
+   xmlns="http://usefulinc.com/ns/doap#">
+  <rdf:Description rdf:about="file:///home/tai/src/perlmods/WWW-Finger/Changes.ttl">
     <dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
     <dc:description xml:lang="en">Revision history for Perl extension WWW::Finger.</dc:description>
-    <dc:subject rdf:resource="http://search.cpan.org/dist/WWW-Finger/#project"/>
+    <dc:subject rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/project"/>
     <dc:title>Changes</dc:title>
   </rdf:Description>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.01">
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-01">
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-14</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.01.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</doap:revision>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.01.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.01</revision>
     <rdfs:comment xml:lang="en">Original version</rdfs:comment>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.02">
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-02">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -28,14 +29,14 @@
             <rdfs:label xml:lang="en">Fixed problems with build.</rdfs:label>
           </dcs:Bugfix>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.01"/>
+        <dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-01"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-14</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.02.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.03">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.02.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-03">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -48,14 +49,14 @@
             <rdfs:label xml:lang="en">WWW::Finger::Webfinger now provides an -&gt;endpoint method.</rdfs:label>
           </dcs:Addition>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.02"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-02"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-15</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.03.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.04">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.03.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-04">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -78,14 +79,14 @@
             <rdfs:label xml:lang="en">Unimplemented methods return empty arrays properly.</rdfs:label>
           </dcs:Bugfix>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.03"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-03"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-16</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.04.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.04</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.05">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.04.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.04</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-05">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -98,14 +99,14 @@
             <rdfs:label xml:lang="en">use XRD::Parser 0.04.</rdfs:label>
           </dcs:Update>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.04"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-04"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-16</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.05.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.05</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.06">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.05.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.05</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-06">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -148,14 +149,14 @@
             <rdfs:label xml:lang="en">Use Turtle for Changes file.</rdfs:label>
           </dcs:Update>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.05"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-05"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.06.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.06</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.07">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.06.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.06</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-07">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -168,14 +169,14 @@
             <rdfs:label xml:lang="en">Update copyright noticed to 2010.</rdfs:label>
           </dcs:Update>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.06"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-06"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.07.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.07</doap:revision>
-  </doap:Version>
-  <doap:Version rdf:about="http://search.cpan.org/dist/WWW-Finger/#v_0.08">
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.07.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.07</revision>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-08">
     <dcs:changeset>
       <dcs:ChangeSet>
         <dcs:item>
@@ -183,55 +184,65 @@
             <rdfs:label xml:lang="en">Documentation improvements.</rdfs:label>
           </dcs:Bugfix>
         </dcs:item>
-        <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.07"/>
+        <dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-07"/>
       </dcs:ChangeSet>
     </dcs:changeset>
     <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-06</dc:issued>
-    <doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.08.tar.gz"/>
-    <doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.08</doap:revision>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.08.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.08</revision>
     <rdfs:comment xml:lang="en">Too many releases today!</rdfs:comment>
-  </doap:Version>
-  <doap:Project rdf:about="http://search.cpan.org/dist/WWW-Finger/#project">
-    <doap:bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger"/>
-    <doap:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-08</doap:created>
-    <doap:developer rdf:resource="http://tobyinkster.co.uk/#i"/>
-    <doap:documenter rdf:resource="http://tobyinkster.co.uk/#i"/>
-    <doap:download-page rdf:resource="http://search.cpan.org/dist/WWW-Finger/"/>
-    <doap:homepage rdf:resource="http://search.cpan.org/dist/WWW-Finger/"/>
-    <doap:license rdf:resource="http://dev.perl.org/licenses/"/>
-    <doap:license rdf:resource="http://dev.perl.org/licenses/artistic.html"/>
-    <doap:license rdf:resource="http://www.opensource.org/licenses/gpl-license.php"/>
-    <doap:maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
-    <doap:name>WWW-Finger</doap:name>
-    <doap:programming-language>Perl</doap:programming-language>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.01"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.02"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.03"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.04"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.05"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.06"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.07"/>
-    <doap:release rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.08"/>
-    <doap:repository>
-      <doap:SVNRepository>
-        <doap:browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/"/>
-      </doap:SVNRepository>
-    </doap:repository>
-    <doap:shortdesc xml:lang="en">Get useful data from e-mail addresses</doap:shortdesc>
-    <doap:tester rdf:resource="http://tobyinkster.co.uk/#i"/>
-  </doap:Project>
+  </Version>
+  <Version rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-09">
+    <dcs:changeset>
+      <dcs:ChangeSet>
+        <dcs:item>
+          <dcs:Update>
+            <dcs:checkin rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r104</dcs:checkin>
+            <rdfs:label xml:lang="en">Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab.</rdfs:label>
+          </dcs:Update>
+        </dcs:item>
+        <dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-08"/>
+      </dcs:ChangeSet>
+    </dcs:changeset>
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-04-26</dc:issued>
+    <file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.09.tar.gz"/>
+    <revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.09</revision>
+  </Version>
+  <Project rdf:about="http://usefulinc.com/ns/doap#project">
+    <bug-database rdf:resource="http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger"/>
+    <created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-08</created>
+    <developer rdf:resource="http://tobyinkster.co.uk/#i"/>
+    <documenter rdf:resource="http://tobyinkster.co.uk/#i"/>
+    <download-page rdf:resource="http://search.cpan.org/dist/WWW-Finger/"/>
+    <homepage rdf:resource="http://search.cpan.org/dist/WWW-Finger/"/>
+    <license rdf:resource="http://dev.perl.org/licenses/"/>
+    <license rdf:resource="http://dev.perl.org/licenses/artistic.html"/>
+    <license rdf:resource="http://www.opensource.org/licenses/gpl-license.php"/>
+    <maintainer rdf:resource="http://tobyinkster.co.uk/#i"/>
+    <name>WWW-Finger</name>
+    <programming-language>Perl</programming-language>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-01"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-02"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-03"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-04"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-05"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-06"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-07"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-08"/>
+    <release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-09"/>
+    <repository>
+      <SVNRepository>
+        <browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/"/>
+      </SVNRepository>
+    </repository>
+    <shortdesc xml:lang="en">get useful data from e-mail addresses</shortdesc>
+    <tester rdf:resource="http://tobyinkster.co.uk/#i"/>
+  </Project>
   <foaf:Person rdf:about="http://tobyinkster.co.uk/#i">
+    <ns1:sameAs xmlns:ns1="http://www.w3.org/2002/07/owl#" rdf:resource="http://purl.org/NET/cpan-uri/person/tobyink"/>
     <foaf:homepage rdf:resource="http://tobyinkster.co.uk/"/>
+    <foaf:mbox rdf:resource="mailto:tobyink@cpan.org"/>
     <foaf:name>Toby Inkster</foaf:name>
     <foaf:page rdf:resource="http://search.cpan.org/~tobyink/"/>
   </foaf:Person>
-  <dcs:ChangeSet>
-    <dcs:item>
-      <dcs:Update>
-        <dcs:checkin rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r104</dcs:checkin>
-        <rdfs:label xml:lang="en">Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab.</rdfs:label>
-      </dcs:Update>
-    </dcs:item>
-    <dcs:versus rdf:resource="http://search.cpan.org/dist/WWW-Finger/#v_0.08"/>
-  </dcs:ChangeSet>
 </rdf:RDF>

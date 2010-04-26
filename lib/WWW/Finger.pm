@@ -1,12 +1,12 @@
 package WWW::Finger;
 
 use strict;
-use 5.008001;
+use 5.008;
 
 use Carp;
 our @Modules;
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 BEGIN
 {
@@ -67,7 +67,7 @@ use RDF::Query;
 use Digest::SHA1 qw(sha1_hex);
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 sub _new_from_response
 {
@@ -285,11 +285,11 @@ __END__
 
 =head1 NAME
 
-WWW::Finger - Get useful data from e-mail addresses
+WWW::Finger - get useful data from e-mail addresses
 
 =head1 VERSION
 
-0.08
+0.09
 
 =head1 SYNOPSIS
 
@@ -490,7 +490,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 Copyright (C) 2009-2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.1 or,
+it under the same terms as Perl itself, either Perl version 5.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 =cut

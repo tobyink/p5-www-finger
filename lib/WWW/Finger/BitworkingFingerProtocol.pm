@@ -1,6 +1,6 @@
 package WWW::Finger::BitworkingFingerProtocol;
 
-use 5.008001;
+use 5.008;
 use strict;
 
 use Carp;
@@ -11,7 +11,7 @@ use URI;
 use URI::Escape;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 BEGIN
 {
@@ -118,10 +118,6 @@ __END__
 
 WWW::Finger::BitworkingFingerProtocol - WWW::Finger module for Joe Gregorio's finger protocol
 
-=head1 VERSION
-
-0.08
-
 =head1 SYNOPSIS
 
   use WWW::Finger qw(+BitworkingFingerProtocol);
@@ -160,7 +156,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 Copyright (C) 2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.1 or,
+it under the same terms as Perl itself, either Perl version 5.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 =cut

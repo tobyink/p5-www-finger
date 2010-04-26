@@ -1,6 +1,6 @@
 package WWW::Finger::CPAN;
 
-use 5.008001;
+use 5.008;
 use strict;
 
 use Digest::MD5 qw(md5_hex);
@@ -8,7 +8,7 @@ use LWP::Simple;
 use WWW::Finger;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 BEGIN
 {
@@ -151,10 +151,6 @@ __END__
 
 WWW::Finger::CPAN - WWW::Finger implementation which scrapes cpan.org.
 
-=head1 VERSION
-
-0.08
-
 =head1 DESCRIPTION
 
 Additional methods (other than standard WWW::Finger):
@@ -178,7 +174,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 Copyright (C) 2009-2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.1 or,
+it under the same terms as Perl itself, either Perl version 5.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 

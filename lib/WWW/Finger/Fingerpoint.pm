@@ -1,6 +1,6 @@
 package WWW::Finger::Fingerpoint;
 
-use 5.008001;
+use 5.008;
 use strict;
 
 use Carp;
@@ -13,7 +13,7 @@ use WWW::Finger;
 use URI;
 
 our @ISA = qw(WWW::Finger);
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 
@@ -237,10 +237,6 @@ __END__
 
 WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 
-=head1 VERSION
-
-0.08
-
 =head1 SYNOPSIS
 
   ## Using WWW::Finger
@@ -297,7 +293,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 Copyright (C) 2009-2010 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.1 or,
+it under the same terms as Perl itself, either Perl version 5.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 

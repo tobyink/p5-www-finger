@@ -3,14 +3,16 @@ use warnings;
 
 use inc::Module::Install;
 
-license             'perl';
+my $dist = 'WWW-Finger';
+my $fn   = "lib/$dist.pm"; $fn =~ s#-#/#g;
 
-name                'WWW-Finger';
+name                $dist;
+perl_version_from   $fn;
+version_from        $fn;
+abstract_from       $fn;
+readme_from         $fn;
 author              'Toby Inkster <tobyink@cpan.org>';
-perl_version_from   'lib/WWW/Finger.pm';
-version_from        'lib/WWW/Finger.pm';
-abstract_from       'lib/WWW/Finger.pm';
-readme_from         'lib/WWW/Finger.pm';
+license             'perl';
 
 test_requires       'Test::More' => '0.61';
 
@@ -31,16 +33,16 @@ requires            'XML::LibXML'        => '1.60';
 requires            'XRD::Parser'        => '0.04';
 requires            'URI'                => '1.30';
 
-install_script 'fingerw';
-
 resources(
-	'homepage'   => 'http://search.cpan.org/dist/WWW-Finger/',
-	'repository' => 'http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/',
-	'bugtracker' => 'http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger',
+	'homepage'   => "http://search.cpan.org/dist/$dist/",
+	'repository' => "http://goddamn.co.uk/viewvc/perlmods/$dist/",
+	'bugtracker' => "http://rt.cpan.org/Dist/Display.html?Queue=$dist",
 	);
-	
-system("rapper -i turtle -o rdfxml-abbrev Changes >Changes.xml")
-	if $Module::Install::AUTHOR;
+
+write_doap_changes;
+write_doap_changes_xml;
+
+install_script 'fingerw';
 
 include 'Test::Signature';
 auto_install;

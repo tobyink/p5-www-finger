@@ -1,5 +1,5 @@
 ---
-abstract: 'Get useful data from e-mail addresses'
+abstract: 'get useful data from e-mail addresses'
 author:
   - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
@@ -35,10 +35,10 @@ requires:
   URI: 1.30
   XML::LibXML: 1.60
   XRD::Parser: 0.04
-  perl: 5.8.1
+  perl: 5.8.0
 resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger
   homepage: http://search.cpan.org/dist/WWW-Finger/
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/
-version: 0.08
+version: 0.09
