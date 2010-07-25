@@ -3,13 +3,16 @@ package WWW::Finger::_GenericRDF;
 # Below is not a proper WWW::Finger implementation, but is rather a
 # framework which real implementations can hook onto by subclassing.
 
-use LWP::UserAgent;
-use RDF::Trine 0.112;
-use RDF::Query;
-use Digest::SHA1 qw(sha1_hex);
+use 5.008;
+use base qw(WWW::Finger);
+use common::sense;
 
-our @ISA = qw(WWW::Finger);
-our $VERSION = '0.09';
+use Digest::SHA1 qw(sha1_hex);
+use LWP::UserAgent;
+use RDF::Query;
+use RDF::Trine 0.112;
+
+our $VERSION = '0.100';
 
 sub _new_from_response
 {

@@ -2,18 +2,19 @@ package WWW::Finger::Webfinger;
 
 use 5.008;
 use base qw(WWW::Finger::_GenericRDF);
-use strict;
+use common::sense;
 
 use Carp;
+use HTTP::LRDD '0.100';
 use LWP::UserAgent;
 use RDF::Query;
-use RDF::Trine 0.112;
-use WWW::Finger;
+use RDF::Trine qw[iri];
 use URI;
 use URI::Escape;
-use XRD::Parser 0.04;
+use WWW::Finger;
+use XRD::Parser '0.100';
 
-our $VERSION = '0.09';
+our $VERSION = '0.100';
 
 BEGIN
 {
@@ -31,87 +32,17 @@ sub new
 	$ident = URI->new($ident);
 	return undef
 		unless $ident->scheme =~ /^(mailto|acct|xmpp)$/;
-
 	$self->{'ident'} = $ident;
-	my ($user, $host) = split /\@/, $ident->authority
-		if defined $ident && defined $ident->authority;
-	if ("$ident" =~ /^(acct|mailto)\:([^\s\@]+)\@([a-z0-9\-\.]+)$/i)
-	{
-		$user = $2;
-		$host = $3;
-	}
 
-	eval {
-		my $xrd_parser = XRD::Parser->hostmeta($host);
-		$xrd_parser->consume;
-		$self->{'hostmeta'} = $xrd_parser->graph;
-	};
-
-	return undef unless defined $self->{'hostmeta'};
-	
-	my @descriptors;
-	my $sparql  = sprintf("SELECT DISTINCT ?template WHERE { { <%s> <%s> ?template . } UNION { <%s> <%s> ?template . } }",
-		('http://ontologi.es/xrd#host:' . lc $host),
-		'x-xrd+template+for:http://lrdd.net/rel/descriptor',
-		('http://ontologi.es/xrd#host:' . lc $host),
-		'x-xrd+template+for:http://www.iana.org/assignments/relation/lrdd',
-		);
-	my $query   = RDF::Query->new($sparql);
-	my $results = $query->execute( $self->{'hostmeta'} );
-	while (my $row = $results->next)
-	{
-		next
-			unless $row->{'template'}->is_literal;
-		next
-			unless $row->{'template'}->literal_datatype eq 'http://ontologi.es/xrd#URITemplate';
-			
-		my $template = $row->{'template'}->literal_value;
-		my $escaped  = uri_escape("$ident");
-		$template =~ s/\{uri\}/$escaped/g;
-		
-		push @descriptors, $template;
-	}
-	
-	my $ua = LWP::UserAgent->new;
-	$ua->timeout(10);
-	$ua->env_proxy;
-	$ua->default_header('Accept' => 'application/rdf+xml, text/turtle, application/x-rdf+json, application/xrd+xml;q=0.5, */*;q=0.01');
-
-	foreach my $d (@descriptors)
-	{
-		eval
-		{
-			my $response = $ua->get($d);
-			die unless $response->is_success;
-			
-			if ($response->content_type =~ /xrd/i)
-			{
-				my $profile_parser = XRD::Parser->new($response->decoded_content, $d);
-				$profile_parser->consume;
-				
-				$self->{'graph'} = $profile_parser->graph;
-			}
-			else
-			{
-				my $parser;
-				$parser = RDF::Trine::Parser::Turtle->new  if $response->content_type =~ m`(n3|turtle|text/plain)`;
-				$parser = RDF::Trine::Parser::RDFJSON->new if $response->content_type =~ m`(json)`;
-				$parser = RDF::Trine::Parser::RDFXML->new  unless defined $parser;
-				
-				my $model  = RDF::Trine::Model->new( RDF::Trine::Store->temporary_store );
-				$parser->parse_into_model($d, $response->decoded_content, $model);
-				
-				$self->{'graph'} = $model;
-			}
-		};
-		last
-			if defined $self->{'graph'} && $self->{'graph'}->count_statements;
-	}
-	
-	return undef
-		unless defined $self->{'graph'} && $self->{'graph'}->count_statements;
+	my $lrdd = HTTP::LRDD->new('http://lrdd.net/rel/descriptor', 'describedby', 'lrdd', 'webfinger');
+	my @d = $lrdd->discover($ident);
+	$self->{'graph'} = $lrdd->process_all($ident);
 	
 	$self->follow_seeAlso(0);
+	
+	return undef
+		unless $self->{'graph'}->count_statements(iri($ident),undef,undef)
+		||     $self->{'graph'}->count_statements(undef,undef,iri($ident));
 	
 	return $self;
 }
@@ -227,7 +158,7 @@ description:
 
 =head1 SEE ALSO
 
-L<WWW::Finger>, L<XRD::Parser>.
+L<WWW::Finger>, L<XRD::Parser>, L<HTTP::LRDD>.
 
 L<http://code.google.com/p/webfinger/>.
 

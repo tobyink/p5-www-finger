@@ -2,7 +2,7 @@ package WWW::Finger::Fingerpoint;
 
 use 5.008;
 use base qw(WWW::Finger);
-use strict;
+use common::sense;
 
 use Carp;
 use Digest::SHA1 qw(sha1_hex);
@@ -10,10 +10,10 @@ use HTTP::Link::Parser qw(:standard);
 use LWP::UserAgent;
 use RDF::Query::Client;
 use RDF::Trine;
-use WWW::Finger;
 use URI;
+use WWW::Finger;
 
-our $VERSION = '0.09';
+our $VERSION = '0.100';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 

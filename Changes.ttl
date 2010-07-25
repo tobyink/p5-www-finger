@@ -156,6 +156,21 @@ my:v_0-09
 		dcs:item [ rdfs:label "Various cleanups."@en ]
 	] .
 
+my:v_0-100
+
+	a               :Version ;
+	dc:issued       "2010-07-25"^^xsd:date ;
+	:revision       "0.100"^^xsd:string ;
+	:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.100.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0-09 ;
+		dcs:item [ rdfs:label "Use the somewhat more complete (albeit slower) HTTP::LRDD module to perform LRDD for Webfinger rather than a home-grown method."@en ; a dcs:Update ] ;
+		dcs:item [ rdfs:label "CPAN module now has webid method."@en ; a dcs:Addition ]
+	] .
+
 
 #############################################################
 
@@ -184,7 +199,7 @@ my:v_0-09
 		<http://www.opensource.org/licenses/gpl-license.php> ;
 	:release
 		my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 , my:v_0-05 ,
-		my:v_0-06 , my:v_0-07 , my:v_0-08 , my:v_0-09 .
+		my:v_0-06 , my:v_0-07 , my:v_0-08 , my:v_0-09 , my:v_0-100 .
 
 #############################################################
 

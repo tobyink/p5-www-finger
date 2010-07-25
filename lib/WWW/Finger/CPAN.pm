@@ -2,17 +2,18 @@ package WWW::Finger::CPAN;
 
 use 5.008;
 use base qw(WWW::Finger);
-use strict;
+use common::sense;
 
 use Digest::MD5 qw(md5_hex);
 use LWP::Simple;
 use WWW::Finger;
 
-our $VERSION = '0.09';
+our $VERSION = '0.100';
 
 BEGIN
 {
-	push @WWW::Finger::Modules, __PACKAGE__;
+	# prioritise this module as it can failover very quickly.
+	unshift @WWW::Finger::Modules, __PACKAGE__;
 }
 
 sub new
@@ -33,7 +34,7 @@ sub new
 	my ($user, $host) = split /\@/, $self->{'ident'}->to;
 	return undef
 		unless lc $host eq 'cpan.org';
-
+	
 	return $self;
 }
 
@@ -141,6 +142,22 @@ sub image
 	else
 	{
 		return "http://www.gravatar.com/avatar/$md5.jpg";
+	}
+}
+
+sub webid
+{
+	my $self = shift;
+	my ($user, $host) = split /\@/, $self->{'ident'}->to;
+	my $cpanpage = 'http://purl.org/NET/cpan-uri/person/' . $user;
+	
+	if (wantarray)
+	{
+		return @{[$cpanpage]};
+	}
+	else
+	{
+		return $cpanpage;
 	}
 }
 

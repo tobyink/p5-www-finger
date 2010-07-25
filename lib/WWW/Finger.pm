@@ -1,12 +1,12 @@
 package WWW::Finger;
 
-use strict;
+use common::sense;
 use 5.008;
 
 use Carp;
 our @Modules;
 
-our $VERSION = '0.09';
+our $VERSION = '0.100';
 
 BEGIN
 {
