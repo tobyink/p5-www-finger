@@ -6,7 +6,7 @@ use 5.008;
 use Carp;
 our @Modules;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 BEGIN
 {

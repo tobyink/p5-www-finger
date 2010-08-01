@@ -14,7 +14,7 @@ use URI::Escape;
 use WWW::Finger;
 use XRD::Parser '0.100';
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 BEGIN
 {
@@ -153,6 +153,24 @@ description:
 =item * http://xmlns.com/foaf/0.1/depiction
 
 =item * http://ontologi.es/sparql#endpoint
+
+=back
+
+=over 4
+
+As well as the standard WWW::Finger methods, WWW::Finger::Webfinger provides this
+additional method:
+
+=item C<< get($p1, $p2, ...) >>
+
+$p1, $p2 and are RDF predicate URIs, XRD Link@rel values, or XRD Property@type values
+
+  # Returns phone numbers...
+  $finger->get('http://xmlns.com/foaf/0.1/phone',
+               'http://rdf.data-vocabulary.org/#tel');
+  
+  # Salmon-style magic keys
+  $finger->get('magic-public-key');
 
 =back
 

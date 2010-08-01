@@ -8,7 +8,7 @@ use Digest::MD5 qw(md5_hex);
 use LWP::Simple;
 use WWW::Finger;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 BEGIN
 {

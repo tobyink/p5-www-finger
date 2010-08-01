@@ -1,19 +1,19 @@
 package WWW::Finger::Fingerpoint;
 
 use 5.008;
-use base qw(WWW::Finger);
+use base qw[WWW::Finger];
 use common::sense;
 
 use Carp;
-use Digest::SHA1 qw(sha1_hex);
-use HTTP::Link::Parser qw(:standard);
+use Digest::SHA1 qw[sha1_hex];
+use HTTP::Link::Parser qw[:standard];
 use LWP::UserAgent;
 use RDF::Query::Client;
 use RDF::Trine;
 use URI;
 use WWW::Finger;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
 
@@ -159,6 +159,15 @@ sub graph
 	return $self->{'graph'};
 }
 
+sub get
+{
+	my ($self, @params) = @_;
+	return WWW::Finger::_GenericRDF::_simple_sparql(
+		$self,
+		{use_endpoint=>1},
+		map { HTTP::Link::Parser::relationship_uri($_) } @params );
+}
+
 sub endpoint
 {
 	my $self = shift;
@@ -273,6 +282,25 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
       print "Found page: " . $row->{'page'}->uri . "\n";
     }
   }
+  
+=head1 DESCRIPTION
+
+As well as the standard WWW::Finger methods, WWW::Finger::Fingerpoint provides this
+additional method:
+
+=over 4
+
+=item C<< get($p1, $p2, ...) >>
+
+$p1, $p2 and are RDF predicate URIs. Returns a list of values which are non-bnode
+objects of triples where the predicate URI is one of the parameters and the 
+subject URI is the person/agent fingered.
+
+  # Returns phone numbers...
+  $finger->get('http://xmlns.com/foaf/0.1/phone',
+               'http://rdf.data-vocabulary.org/#tel');
+
+=back
 
 =head1 SEE ALSO
 

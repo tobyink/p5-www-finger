@@ -171,6 +171,19 @@ my:v_0-100
 		dcs:item [ rdfs:label "CPAN module now has webid method."@en ; a dcs:Addition ]
 	] .
 
+my:v_0-101
+
+	a               :Version ;
+	dc:issued       "2010-07-31"^^xsd:date ;
+	:revision       "0.101"^^xsd:string ;
+	:file-release
+		<http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.101.tar.gz> ;
+	dcs:changeset
+	[
+		a dcs:ChangeSet ;
+		dcs:versus :v_0-100 ;
+		dcs:item [ rdfs:label "Webfinger and Fingerpoint modules provide a 'get' method to easily access additional data."@en ; a dcs:Addition ]
+	] .
 
 #############################################################
 
@@ -199,7 +212,8 @@ my:v_0-100
 		<http://www.opensource.org/licenses/gpl-license.php> ;
 	:release
 		my:v_0-01 , my:v_0-02 , my:v_0-03 , my:v_0-04 , my:v_0-05 ,
-		my:v_0-06 , my:v_0-07 , my:v_0-08 , my:v_0-09 , my:v_0-100 .
+		my:v_0-06 , my:v_0-07 , my:v_0-08 , my:v_0-09 ,
+		my:v_0-100, my:v_0-101 .
 
 #############################################################
 

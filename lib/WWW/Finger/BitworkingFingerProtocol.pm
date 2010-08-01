@@ -11,7 +11,7 @@ use URI;
 use URI::Escape;
 use WWW::Finger;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 BEGIN
 {

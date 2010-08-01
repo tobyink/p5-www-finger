@@ -1,162 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF xmlns:dbug="http://ontologi.es/doap-bugs#" xmlns:dc="http://purl.org/dc/terms/" xmlns:dcs="http://ontologi.es/doap-changeset#" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r0">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r1"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar0">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar1"/>
 	<dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-01"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r1">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar1">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Fixed problems with build.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r10">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r11"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r12"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar10">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar11"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar12"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-04"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r11">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar11">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Mini bug-fixes.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r12">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar12">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">use XRD::Parser 0.04.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r13">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r14"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r15"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r16"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r17"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r18"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r19"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r20"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r21"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar13">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar14"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar15"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar16"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar17"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar18"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar19"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar20"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar21"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-05"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r14">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar14">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">Support Joe Gregorio's alternative to current Webfinger protocol.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r15">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar15">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">Allow fingerw command-line client to load additional modules.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r16">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar16">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">Improve fingerw's debugging (verbose) messages.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r17">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar17">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Change"/>
 	<rdfs:label xml:lang="en">Refactor some code from WWW::Finger::Webfinger to allow it to be used elsewhere.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r18">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar18">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">Follow rdf:seeAlso and ianalink:describedby links found in Webfinger account profiles.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r19">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar19">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">Support semantics of foaf:account and foaf:holdsAccount.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r2">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r3"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r4"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar2">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar3"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar4"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-02"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r20">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar20">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Fix duplicated mbox in WWW::Finger::CPAN.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r21">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar21">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">Use Turtle for Changes file.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r22">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r23"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r24"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar22">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar23"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar24"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-06"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r23">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar23">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Include BitworkingFingerProtocol.pm in MANIFEST.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r24">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar24">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">Update copyright noticed to 2010.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r25">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r26"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar25">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar26"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-07"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r26">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar26">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Documentation improvements.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r27">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r28"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r29"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar27">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar28"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar29"/>
 	<dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-08"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r28">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar28">
 	<dcs:checkin rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r104</dcs:checkin>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">Switch Changes file from Aaron Cope's changefile vocab to my own DOAP Change Sets vocab.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r29">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar29">
 	<rdfs:label xml:lang="en">Various cleanups.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r3">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar3">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Fixed package signature.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r30">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r31"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r32"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar30">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar31"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar32"/>
 	<dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-09"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r31">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar31">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Update"/>
 	<rdfs:label xml:lang="en">Use the somewhat more complete (albeit slower) HTTP::LRDD module to perform LRDD for Webfinger rather than a home-grown method.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r32">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar32">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">CPAN module now has webid method.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r33">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar33">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar34"/>
+	<dcs:versus rdf:resource="http://usefulinc.com/ns/doap#v_0-100"/>
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar34">
+	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
+	<rdfs:label xml:lang="en">Webfinger and Fingerpoint modules provide a 'get' method to easily access additional data.</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar35">
 	<doap:browse rdf:resource="http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/"/>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#SVNRepository"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r4">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar4">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">WWW::Finger::Webfinger now provides an ->endpoint method.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r5">
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r6"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r7"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r8"/>
-	<dcs:item rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r9"/>
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar5">
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar6"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar7"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar8"/>
+	<dcs:item rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar9"/>
 	<dcs:versus rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-03"/>
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#ChangeSet"/>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r6">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar6">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Addition"/>
 	<rdfs:label xml:lang="en">Bundle a command-line query tool.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r7">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar7">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Change"/>
 	<rdfs:label xml:lang="en">Change default scheme for Webfinger from 'acct://' to 'acct:'.</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r8">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar8">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Fingerpoint bugfix in ->graph().</rdfs:label>
 </rdf:Description>
-<rdf:Description rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r9">
+<rdf:Description rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar9">
 	<rdf:type rdf:resource="http://ontologi.es/doap-changeset#Bugfix"/>
 	<rdfs:label xml:lang="en">Unimplemented methods return empty arrays properly.</rdfs:label>
 </rdf:Description>
@@ -174,49 +183,49 @@
 	<rdfs:comment xml:lang="en">Original version</rdfs:comment>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-02">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r0"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar0"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-14</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.02.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.02</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-03">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r2"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar2"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-15</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.03.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.03</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-04">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r5"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar5"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-16</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.04.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.04</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-05">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r10"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar10"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-12-16</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.05.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.05</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-06">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r13"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar13"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.06.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.06</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-07">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r22"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar22"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-01-06</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.07.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.07</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-08">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r25"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar25"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-06</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.08.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.08</doap:revision>
@@ -224,17 +233,24 @@
 	<rdfs:comment xml:lang="en">Too many releases today!</rdfs:comment>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-09">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r27"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar27"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-04-26</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.09.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.09</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-100">
-	<dcs:changeset rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r30"/>
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar30"/>
 	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-25</dc:issued>
 	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.100.tar.gz"/>
 	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.100</doap:revision>
+	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-101">
+	<dcs:changeset rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar33"/>
+	<dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-31</dc:issued>
+	<doap:file-release rdf:resource="http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.101.tar.gz"/>
+	<doap:revision rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.101</doap:revision>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Version"/>
 </rdf:Description>
 <rdf:Description xmlns:ns1="http://www.w3.org/2002/07/owl#" rdf:about="http://tobyinkster.co.uk/#i">
@@ -268,7 +284,8 @@
 	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-08"/>
 	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-09"/>
 	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-100"/>
-	<doap:repository rdf:nodeID="rDBEBB344978111DF9DF4AA61A2709FC1r33"/>
+	<doap:release rdf:resource="http://purl.org/NET/cpan-uri/dist/WWW-Finger/v_0-101"/>
+	<doap:repository rdf:nodeID="rAF243CCC9CEB11DF8F66E3DDA518912Ar35"/>
 	<doap:shortdesc xml:lang="en">get useful data from e-mail addresses</doap:shortdesc>
 	<doap:tester rdf:resource="http://tobyinkster.co.uk/#i"/>
 	<rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>

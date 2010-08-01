@@ -8,11 +8,12 @@ use base qw(WWW::Finger);
 use common::sense;
 
 use Digest::SHA1 qw(sha1_hex);
+use HTTP::Link::Parser qw();
 use LWP::UserAgent;
 use RDF::Query;
 use RDF::Trine 0.112;
 
-our $VERSION = '0.100';
+our $VERSION = '0.101';
 
 sub _new_from_response
 {
@@ -67,6 +68,13 @@ sub _uri_into_model
 sub _simple_sparql
 {
 	my $self = shift;
+	
+	my $opts = {};
+	if (ref $_[0] eq 'HASH')
+	{
+		$opts = shift;
+	}
+	
 	my $where = '';
 	foreach my $p (@_)
 	{
@@ -78,10 +86,20 @@ sub _simple_sparql
 			$p
 			);
 	}
-	
 	my $sparql = "PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT DISTINCT ?x WHERE { $where }";
-	my $query  = RDF::Query->new($sparql);
-	my $iter   = $query->execute( $self->{'graph'} );
+	
+	my $iter;
+	if ($opts->{'use_endpoint'})
+	{
+		my $query = RDF::Query::Client->new($sparql);
+		$iter = $query->execute($self->endpoint);
+	}
+	else
+	{
+		my $query = RDF::Query->new($sparql);
+		$iter = $query->execute($self->graph);
+	}
+	
 	my @results;
 	
 	while (my $row = $iter->next)
@@ -103,6 +121,12 @@ sub _simple_sparql
 	}
 	
 	return undef;
+}
+
+sub get
+{
+	my ($self, @params) = @_;
+	return $self->_simple_sparql( map { HTTP::Link::Parser::relationship_uri($_) } @params );
 }
 
 sub follow_seeAlso
