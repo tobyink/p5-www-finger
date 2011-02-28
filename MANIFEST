@@ -1,3 +1,4 @@
+TODO
 Changes
 Changes.ttl
 Changes.xml
@@ -15,7 +16,6 @@ lib/WWW/Finger/CPAN.pm
 lib/WWW/Finger/BitworkingFingerProtocol.pm
 lib/WWW/Finger/_GenericRDF.pm
 
-t/00sig.t
 t/01basic.t
 
 script/fingerw
