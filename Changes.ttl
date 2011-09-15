@@ -193,13 +193,13 @@ my:v_0-101
 	:name           "WWW-Finger" ;
 	:shortdesc      "get useful data from e-mail addresses"@en ;
 	:programming-language "Perl" ;
-	:homepage       <http://search.cpan.org/dist/WWW-Finger/> ;
-	:download-page  <http://search.cpan.org/dist/WWW-Finger/> ;
+	:homepage       <https://metacpan.org/release/WWW-Finger> ;
+	:download-page  <https://metacpan.org/release/WWW-Finger> ;
 	:bug-database   <http://rt.cpan.org/Dist/Display.html?Queue=WWW-Finger> ;
 	:repository
 	[
 		a            :SVNRepository ;
-		:browse      <http://goddamn.co.uk/viewvc/perlmods/WWW-Finger/>
+		:browse      <http://goddamn.co.uk/svn-web/perlmods/browse/WWW-Finger/>
 	] ;
 	:maintainer     <http://tobyinkster.co.uk/#i> ;
 	:developer      <http://tobyinkster.co.uk/#i> ;
@@ -222,7 +222,7 @@ toby:i
 	a               foaf:Person ;
 	foaf:name       "Toby Inkster" ;
 	foaf:homepage   <http://tobyinkster.co.uk/> ;
-	foaf:page       <http://search.cpan.org/~tobyink/> ;
+	foaf:page       <https://metacpan.org/author/TOBYINK> ;
 	foaf:mbox       <mailto:tobyink@cpan.org> ;
 	<http://www.w3.org/2002/07/owl#sameAs> <http://purl.org/NET/cpan-uri/person/tobyink> .
 
