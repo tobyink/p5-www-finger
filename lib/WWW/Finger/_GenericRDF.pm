@@ -4,7 +4,7 @@ package WWW::Finger::_GenericRDF;
 # framework which real implementations can hook onto by subclassing.
 
 use 5.008;
-use base qw(WWW::Finger);
+use parent qw(WWW::Finger);
 use common::sense;
 
 use Digest::SHA1 qw(sha1_hex);

@@ -1,7 +1,7 @@
 package WWW::Finger::Webfinger;
 
 use 5.008;
-use base qw(WWW::Finger::_GenericRDF);
+use parent qw(WWW::Finger::_GenericRDF);
 use common::sense;
 
 use Carp;

@@ -1,7 +1,7 @@
 package WWW::Finger::CPAN;
 
 use 5.008;
-use base qw(WWW::Finger);
+use parent qw(WWW::Finger);
 use common::sense;
 
 use Digest::MD5 qw(md5_hex);

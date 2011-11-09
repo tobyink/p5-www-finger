@@ -1,7 +1,7 @@
 package WWW::Finger::BitworkingFingerProtocol;
 
 use 5.008;
-use base qw(WWW::Finger);
+use parent qw(WWW::Finger);
 use common::sense;
 
 use Carp;
