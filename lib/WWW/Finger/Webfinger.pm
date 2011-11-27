@@ -1,25 +1,26 @@
 package WWW::Finger::Webfinger;
 
-use 5.008;
-use parent qw(WWW::Finger::_GenericRDF);
+use 5.010;
 use common::sense;
+use utf8;
 
-use Carp;
-use HTTP::LRDD '0.100';
-use LWP::UserAgent;
-use RDF::Query;
-use RDF::Trine qw[iri];
-use URI;
-use URI::Escape;
-use WWW::Finger;
-use XRD::Parser '0.100';
+use Carp 0;
+use HTTP::LRDD 0.104;
+use LWP::UserAgent 0;
+use RDF::Query 2.900;
+use RDF::Trine 0.135 qw[iri];
+use URI 0;
+use URI::Escape 0;
+use XRD::Parser 0.102;
 
-our $VERSION = '0.101';
+use parent qw(WWW::Finger::_GenericRDF);
 
-BEGIN
-{
-	push @WWW::Finger::Modules, __PACKAGE__;
+BEGIN {
+	$WWW::Finger::Webfinger::AUTHORITY = 'cpan:TOBYINK';
+	$WWW::Finger::Webfinger::VERSION   = '0.101';
 }
+
+sub speed { 100 }
 
 sub new
 {
@@ -88,17 +89,18 @@ sub _simple_sparql
 		return $results[0];
 	}
 	
-	return undef;
+	return;
 }
 
 sub webid
 {
-	my $self = shift;
-	return $self->SUPER::webid(@_);
+	return (shift)->SUPER::webid(@_);
 }
 
 1;
+
 __END__
+
 =head1 NAME
 
 WWW::Finger::Webfinger - WWW::Finger module for Webfinger
@@ -134,7 +136,7 @@ description data if it has status code 200 (OK).
 The following relationships/properties are understood in the account
 description:
 
-=over 8
+=over
 
 =item * http://xmlns.com/foaf/0.1/name
 
@@ -156,7 +158,7 @@ description:
 
 =back
 
-=over 4
+=over
 
 As well as the standard WWW::Finger methods, WWW::Finger::Webfinger provides this
 additional method:
@@ -184,13 +186,17 @@ L<http://code.google.com/p/webfinger/>.
 
 Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2010 by Toby Inkster
+Copyright (C) 2009-2011 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8 or,
-at your option, any later version of Perl 5 you may have available.
+it under the same terms as Perl itself.
 
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut

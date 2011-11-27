@@ -1,26 +1,27 @@
 package WWW::Finger::Fingerpoint;
 
-use 5.008;
-use parent qw[WWW::Finger];
+use 5.010;
 use common::sense;
+use utf8;
 
-use Carp;
-use Digest::SHA1 qw[sha1_hex];
-use HTTP::Link::Parser qw[:standard];
-use LWP::UserAgent;
-use RDF::Query::Client;
-use RDF::Trine;
-use URI;
-use WWW::Finger;
+use Carp 0;
+use Digest::SHA1 0 qw[sha1_hex];
+use HTTP::Link::Parser 0.102 qw[:standard];
+use LWP::UserAgent 0;
+use RDF::Query::Client 0.106;
+use RDF::Trine 0.135;
+use URI 0;
 
-our $VERSION = '0.101';
+use parent qw[WWW::Finger];
 
-my $rel_fingerpoint = 'http://ontologi.es/sparql#fingerpoint';
-
-BEGIN
-{
-	push @WWW::Finger::Modules, __PACKAGE__;
+BEGIN {
+	$WWW::Finger::Fingerpoint::AUTHORITY = 'cpan:TOBYINK';
+	$WWW::Finger::Fingerpoint::VERSION   = '0.101';
 }
+
+use constant rel_fingerpoint => 'http://ontologi.es/sparql#fingerpoint';
+
+sub speed { 90 }
 
 sub new
 {
@@ -47,7 +48,7 @@ sub new
 		unless $response->is_success;
 	
 	my $linkdata = HTTP::Link::Parser::parse_links_to_rdfjson($response);
-	my $sparql   = $linkdata->{ $httphost }->{ $rel_fingerpoint }->[0]->{'value'};
+	my $sparql   = $linkdata->{ $httphost }->{ (rel_fingerpoint) }->[0]->{'value'};
 
 	unless (defined $sparql)
 	{
@@ -240,6 +241,7 @@ sub key
 }
 
 1;
+
 __END__
 
 =head1 NAME
@@ -288,7 +290,7 @@ WWW::Finger::Fingerpoint - Investigate E-mail Addresses using Fingerpoint
 As well as the standard WWW::Finger methods, WWW::Finger::Fingerpoint provides this
 additional method:
 
-=over 4
+=over
 
 =item C<< get($p1, $p2, ...) >>
 
@@ -316,13 +318,17 @@ L<http://www.perlrdf.org/>.
 
 Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2010 by Toby Inkster
+Copyright (C) 2009-2011 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8 or,
-at your option, any later version of Perl 5 you may have available.
+it under the same terms as Perl itself.
 
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut

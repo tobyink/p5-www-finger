@@ -1,22 +1,23 @@
 package WWW::Finger::BitworkingFingerProtocol;
 
-use 5.008;
-use parent qw(WWW::Finger);
+use 5.010;
 use common::sense;
+use utf8;
 
-use Carp;
-use JSON;
-use LWP::UserAgent;
-use URI;
-use URI::Escape;
-use WWW::Finger;
+use Carp 0;
+use JSON 2.00;
+use LWP::UserAgent 0;
+use URI 0;
+use URI::Escape 0;
 
-our $VERSION = '0.101';
+use parent qw(WWW::Finger);
 
-BEGIN
-{
-	push @WWW::Finger::Modules, __PACKAGE__;
+BEGIN {
+	$WWW::Finger::BitworkingFingerProtocol::AUTHORITY = 'cpan:TOBYINK';
+	$WWW::Finger::BitworkingFingerProtocol::VERSION   = '0.101';
 }
+
+sub speed { 105 }
 
 sub new
 {
@@ -113,14 +114,16 @@ sub dictionary
 }
 
 1;
+
 __END__
+
 =head1 NAME
 
 WWW::Finger::BitworkingFingerProtocol - WWW::Finger module for Joe Gregorio's finger protocol
 
 =head1 SYNOPSIS
 
-  use WWW::Finger qw(+BitworkingFingerProtocol);
+  use WWW::Finger;
   my $finger = WWW::Finger->new("joe@example.com");
   if (defined $finger)
   {
@@ -133,7 +136,7 @@ This module implements an alternative finger proposal by Joe Gregorio.
 
 Additional methods (other than standard WWW::Finger):
 
-=over 8
+=over
 
 =item * C<openid> - returns the person's OpenID.
 
@@ -151,12 +154,17 @@ L<http://bitworking.org/news/2010/01/webfinger>.
 
 Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2010 by Toby Inkster
+Copyright (C) 2010-2011 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8 or,
-at your option, any later version of Perl 5 you may have available.
+it under the same terms as Perl itself.
+
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 =cut

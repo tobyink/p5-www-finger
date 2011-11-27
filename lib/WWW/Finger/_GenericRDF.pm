@@ -3,17 +3,22 @@ package WWW::Finger::_GenericRDF;
 # Below is not a proper WWW::Finger implementation, but is rather a
 # framework which real implementations can hook onto by subclassing.
 
-use 5.008;
-use parent qw(WWW::Finger);
+use 5.010;
 use common::sense;
+use utf8;
 
-use Digest::SHA1 qw(sha1_hex);
-use HTTP::Link::Parser qw();
-use LWP::UserAgent;
-use RDF::Query;
-use RDF::Trine 0.112;
+use Digest::SHA1 0 qw(sha1_hex);
+use HTTP::Link::Parser 0.102 qw();
+use LWP::UserAgent 0;
+use RDF::Query 2.900;
+use RDF::Trine 0.135;
 
-our $VERSION = '0.101';
+use parent qw(WWW::Finger);
+
+BEGIN {
+	$WWW::Finger::_GenericRDF::AUTHORITY = 'cpan:TOBYINK';
+	$WWW::Finger::_GenericRDF::VERSION   = '0.101';
+}
 
 sub _new_from_response
 {
@@ -248,3 +253,28 @@ sub endpoint
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+WWW::Finger::_GenericRDF - reusable base
+
+=head1 AUTHOR
+
+Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
+
+=head1 COPYRIGHT AND LICENCE
+
+Copyright (C) 2009-2011 by Toby Inkster
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+=cut
