@@ -14,7 +14,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::BitworkingFingerProtocol::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::BitworkingFingerProtocol::VERSION   = '0.101';
+	$WWW::Finger::BitworkingFingerProtocol::VERSION   = '0.102';
 }
 
 sub speed { 105 }

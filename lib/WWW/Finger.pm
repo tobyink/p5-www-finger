@@ -19,7 +19,7 @@ use Module::Pluggable
 
 BEGIN {
 	$WWW::Finger::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::VERSION   = '0.101';
+	$WWW::Finger::VERSION   = '0.102';
 }
 
 sub new

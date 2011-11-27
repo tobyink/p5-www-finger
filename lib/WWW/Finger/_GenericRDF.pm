@@ -17,7 +17,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::_GenericRDF::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::_GenericRDF::VERSION   = '0.101';
+	$WWW::Finger::_GenericRDF::VERSION   = '0.102';
 }
 
 sub _new_from_response

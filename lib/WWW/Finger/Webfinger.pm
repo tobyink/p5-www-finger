@@ -17,7 +17,7 @@ use parent qw(WWW::Finger::_GenericRDF);
 
 BEGIN {
 	$WWW::Finger::Webfinger::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::Webfinger::VERSION   = '0.101';
+	$WWW::Finger::Webfinger::VERSION   = '0.102';
 }
 
 sub speed { 100 }
@@ -158,10 +158,10 @@ description:
 
 =back
 
-=over
-
 As well as the standard WWW::Finger methods, WWW::Finger::Webfinger provides this
 additional method:
+
+=over
 
 =item C<< get($p1, $p2, ...) >>
 
