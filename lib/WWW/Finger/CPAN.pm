@@ -12,7 +12,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::CPAN::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::CPAN::VERSION   = '0.102';
+	$WWW::Finger::CPAN::VERSION   = '0.104';
 }
 
 sub speed { 50 }
@@ -187,7 +187,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2011 by Toby Inkster
+Copyright (C) 2009-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

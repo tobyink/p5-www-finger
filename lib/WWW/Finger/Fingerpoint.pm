@@ -5,7 +5,7 @@ use common::sense;
 use utf8;
 
 use Carp 0;
-use Digest::SHA1 0 qw[sha1_hex];
+use Digest::SHA 0 qw[sha1_hex];
 use HTTP::Link::Parser 0.102 qw[:standard];
 use LWP::UserAgent 0;
 use RDF::Query::Client 0.106;
@@ -16,7 +16,7 @@ use parent qw[WWW::Finger];
 
 BEGIN {
 	$WWW::Finger::Fingerpoint::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::Fingerpoint::VERSION   = '0.102';
+	$WWW::Finger::Fingerpoint::VERSION   = '0.104';
 }
 
 use constant rel_fingerpoint => 'http://ontologi.es/sparql#fingerpoint';
@@ -320,7 +320,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2011 by Toby Inkster
+Copyright (C) 2009-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

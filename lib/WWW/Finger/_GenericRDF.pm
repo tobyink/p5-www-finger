@@ -7,7 +7,7 @@ use 5.010;
 use common::sense;
 use utf8;
 
-use Digest::SHA1 0 qw(sha1_hex);
+use Digest::SHA 0 qw(sha1_hex);
 use HTTP::Link::Parser 0.102 qw();
 use LWP::UserAgent 0;
 use RDF::Query 2.900;
@@ -17,7 +17,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::_GenericRDF::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::_GenericRDF::VERSION   = '0.102';
+	$WWW::Finger::_GenericRDF::VERSION   = '0.104';
 }
 
 sub _new_from_response
@@ -266,7 +266,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2011 by Toby Inkster
+Copyright (C) 2009-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

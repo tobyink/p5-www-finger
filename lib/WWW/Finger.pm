@@ -4,7 +4,7 @@ use 5.010;
 use common::sense;
 use utf8;
 
-use UNIVERSAL::AUTHORITY 0;
+use Object::AUTHORITY 0;
 use Carp 0;
 
 use namespace::clean;
@@ -19,7 +19,7 @@ use Module::Pluggable
 
 BEGIN {
 	$WWW::Finger::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::VERSION   = '0.102';
+	$WWW::Finger::VERSION   = '0.104';
 }
 
 sub new
@@ -168,7 +168,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2009-2011 by Toby Inkster
+Copyright (C) 2009-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

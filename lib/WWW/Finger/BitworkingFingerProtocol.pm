@@ -14,7 +14,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::BitworkingFingerProtocol::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::BitworkingFingerProtocol::VERSION   = '0.102';
+	$WWW::Finger::BitworkingFingerProtocol::VERSION   = '0.104';
 }
 
 sub speed { 105 }
@@ -156,7 +156,7 @@ Toby Inkster, E<lt>tobyink@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENCE
 
-Copyright (C) 2010-2011 by Toby Inkster
+Copyright (C) 2010-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
