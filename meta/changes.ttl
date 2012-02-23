@@ -181,5 +181,7 @@ my:v_0-104
 	:file-release   <http://backpan.perl.org/authors/id/T/TO/TOBYINK/WWW-Finger-0.104.tar.gz> ;
 	dcs:changeset [
 		dcs:versus :v_0-103 ;
+		dcs:item   [ a dcs:Packaging,dcs:Bugfix; rdfs:label "Replace UNIVERSAL::AUTHORITY with Object::AUTHORITY in META.yml too."@en; dcs:blame _:florian; dcs:fixes <http://purl.org/NET/cpan-uri/rt/ticket/75122> ] ;
 		dcs:item   [ a dcs:Update; rdfs:label "s/Digest::SHA1/Digest::SHA/"@en; rdfs:comment "The latter is in Perl core now."@en; dcs:blame _:florian; dcs:fixes <http://purl.org/NET/cpan-uri/rt/ticket/75123> ]
 	] .
+	
