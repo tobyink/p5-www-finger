@@ -12,7 +12,7 @@ use parent qw(WWW::Finger);
 
 BEGIN {
 	$WWW::Finger::CPAN::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::CPAN::VERSION   = '0.104';
+	$WWW::Finger::CPAN::VERSION   = '0.105';
 }
 
 sub speed { 50 }

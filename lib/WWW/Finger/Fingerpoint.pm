@@ -16,7 +16,7 @@ use parent qw[WWW::Finger];
 
 BEGIN {
 	$WWW::Finger::Fingerpoint::AUTHORITY = 'cpan:TOBYINK';
-	$WWW::Finger::Fingerpoint::VERSION   = '0.104';
+	$WWW::Finger::Fingerpoint::VERSION   = '0.105';
 }
 
 use constant rel_fingerpoint => 'http://ontologi.es/sparql#fingerpoint';
